@@ -12,11 +12,18 @@ namespace Benaiah
 {
     public partial class SetorIgual : Form
     {
-        public SetorIgual(string nome, string setor)
+        private string nome;
+        private string setor;
+        public static List<ListaDeRespostas> listaRespostas { get; set; }
+
+        public SetorIgual(string nomeFuncionaria, string setorFuncionaria)
         {
             InitializeComponent();
-            txtNome.Text = "Avalie " + nome + " (" + setor + ")";
+            txtNome.Text = "Avalie " + nomeFuncionaria + " (" + setorFuncionaria + ")";
             txtNome.Font = new Font("Microsoft Sans Serif", 25f);
+            nome = nomeFuncionaria;
+            setor = setorFuncionaria;
+            listaRespostas = new List<ListaDeRespostas>();
         }
 
         private void SetorIgual_Load(object sender, EventArgs e)
@@ -116,15 +123,20 @@ namespace Benaiah
             }
             else
             {
-                List<string> listaRespostas = new List<string>();
+                //List<string> listaRespostas = new List<string>();
+                
+
                 foreach (var box in panel1.Controls.OfType<GroupBox>())
                 {
                     foreach (var rb in box.Controls.OfType<RadioButton>().Where(x => x.Checked))
                     {
-                        listaRespostas.Add(rb.Text);
-                    }                    
+                        //listaRespostas.Add(rb.Text);
+                        ListaDeRespostas lista = new ListaDeRespostas(nome, setor, rb.Text);
+                        listaRespostas.Add(lista);
+                    }
                 }
-                
+
+
                 Close(); // Se as 13 respostas foram preenchidas, permite sair do form
             }
         }

@@ -32,8 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +54,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BancoDadosBenaiah.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BancoDadosBenaiah.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BancoDadosBenaiah.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BancoDadosBenaiah.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BancoDadosBenaiah.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BancoDadosBenaiah.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ConcentraRespostas.cs" />
+    <Compile Include="funcionaria.cs">
+      <DependentUpon>BancoDadosBenaiah.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaDeRespostas.cs" />
+    <Compile Include="Respostas.cs">
+      <DependentUpon>BancoDadosBenaiah.tt</DependentUpon>
+    </Compile>
     <Compile Include="SetorDiferente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +116,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="BancoDadosBenaiah.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BancoDadosBenaiah.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BancoDadosBenaiah.edmx.diagram">
+      <DependentUpon>BancoDadosBenaiah.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -96,6 +136,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BancoDadosBenaiah.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BancoDadosBenaiah.Context.cs</LastGenOutput>
+      <DependentUpon>BancoDadosBenaiah.edmx</DependentUpon>
+    </Content>
+    <Content Include="BancoDadosBenaiah.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BancoDadosBenaiah.edmx</DependentUpon>
+      <LastGenOutput>BancoDadosBenaiah.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

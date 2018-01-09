@@ -9,3 +9,7 @@ C:\projetosCsharp\Benaiah\Benaiah\obj\Debug\Benaiah.csproj.GenerateResource.Cach
 C:\projetosCsharp\Benaiah\Benaiah\obj\Debug\Benaiah.exe
 C:\projetosCsharp\Benaiah\Benaiah\obj\Debug\Benaiah.pdb
 C:\projetosCsharp\Benaiah\Benaiah\obj\Debug\Benaiah.csprojResolveAssemblyReference.cache
+C:\projetosCsharp\Benaiah\Benaiah\bin\Debug\EntityFramework.dll
+C:\projetosCsharp\Benaiah\Benaiah\bin\Debug\EntityFramework.SqlServer.dll
+C:\projetosCsharp\Benaiah\Benaiah\bin\Debug\EntityFramework.xml
+C:\projetosCsharp\Benaiah\Benaiah\bin\Debug\EntityFramework.SqlServer.xml

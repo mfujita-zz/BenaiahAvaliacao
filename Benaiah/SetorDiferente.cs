@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,11 +13,18 @@ namespace Benaiah
 {
     public partial class SetorDiferente : Form
     {
-        public SetorDiferente(string nome, string setor)
+        private string nome;
+        private string setor;
+        public static List<ListaDeRespostas> listaRespostas { get; set; }
+
+        public SetorDiferente(string nomeFuncionaria, string setorFuncionaria)
         {
             InitializeComponent();
-            txtNome.Text = "Avalie " + nome + " (" + setor + ")";
+            txtNome.Text = "Avalie " + nomeFuncionaria + " (" + setorFuncionaria + ")";
             txtNome.Font = new Font("Microsoft Sans Serif", 25f);
+            nome = nomeFuncionaria;
+            setor = setorFuncionaria;
+            listaRespostas = new List<ListaDeRespostas>();
         }
 
         private void SetorDiferente_Load(object sender, EventArgs e)
@@ -46,6 +54,7 @@ namespace Benaiah
                 }
             }
 
+            //Tag = 3 é o último groupbox e o botão localiza-se abaixo.
             foreach (var item in panel1.Controls.OfType<GroupBox>().Where(x => x.Tag.ToString().Equals("3")))
             {
                 BtnConfirmar.Location = new Point((panel1.Right - BtnConfirmar.Width) / 2, item.Bottom + 100);
@@ -79,16 +88,20 @@ namespace Benaiah
             }
             else
             {
-                List<string> listaRespostas = new List<string>();
+                //List<string> listaRespostas = new List<string>();
+                
+                
                 foreach (var box in panel1.Controls.OfType<GroupBox>())
                 {
                     foreach (var rb in box.Controls.OfType<RadioButton>().Where(x => x.Checked))
                     {
-                        listaRespostas.Add(rb.Text);
+                        //listaRespostas.Add(rb.Text);
+                        ListaDeRespostas lista = new ListaDeRespostas(nome,setor,rb.Text);
+                        listaRespostas.Add(lista);
                     }
                 }
 
-                Close(); // Se as 4 respostas foram preenchidas, permite sair do form
+                Close(); // Se as 4 respostas foram preenchidas, permite encerrar o form
             }
         }
 
