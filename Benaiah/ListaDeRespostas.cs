@@ -10,12 +10,14 @@ namespace Benaiah
     {
         public string nome;
         public string setor;
+        public string pergunta;
         public string resposta;
 
-        public ListaDeRespostas(string nomeFunc, string setorFunc, string respostaFunc)
+        public ListaDeRespostas(string nomeFunc, string setorFunc, string _pergunta, string respostaFunc)
         {
             nome = nomeFunc;
             setor = setorFunc;
+            pergunta = _pergunta;
             resposta = respostaFunc;
         }
     }

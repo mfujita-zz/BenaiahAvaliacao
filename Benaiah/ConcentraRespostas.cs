@@ -19,7 +19,7 @@ namespace Benaiah
             sw.WriteLine("<table border=1>");
             foreach (var item in todasRespostas)
             {
-                sw.WriteLine("<tr><td>" + item.nome + "</td> <td>" + item.setor + "</td> <td>" + item.resposta + "</td> </tr>");
+                sw.WriteLine("<tr><td>" + item.nome + "</td> <td>" + item.setor + "</td> <td>" + item.pergunta + "</td> <td>" + item.resposta + "</td> </tr>");
             }
             sw.WriteLine("</table>");
             sw.WriteLine("</body>");

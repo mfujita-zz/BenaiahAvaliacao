@@ -86,7 +86,7 @@ namespace Benaiah
             //listaFuncionarios.Add(new Funcionarios("FERNANDA DE OLIVEIRA VIEIRA", "Outros"));
             //listaFuncionarios.Add(new Funcionarios("VANILDE MARTINELI DE OLIVEIRA CAMARGO", "Outros"));
 
-            SqlConnection conexao = new SqlConnection("Server = ULTRABOOK\\SQLEXPRESS; Database = Benaiah; Trusted_Connection = True; ");
+            SqlConnection conexao = new SqlConnection("Server = ULTRABOOK\\SQLEXPRESS; Database = Benaiah; Trusted_Connection = True;");
             conexao.Open();
             SqlCommand comando = new SqlCommand("select nome, setor, senha from funcionaria", conexao);
             using (SqlDataReader reader = comando.ExecuteReader())
@@ -125,20 +125,31 @@ namespace Benaiah
             //else if (txtSenha.Text.Equals("21")) { SetupAoAcertarSenha(listaFuncionarios[21].Funcionario); nome = listaFuncionarios[21].Funcionario; }
             //else if (txtSenha.Text.Equals("22")) { SetupAoAcertarSenha(listaFuncionarios[22].Funcionario); nome = listaFuncionarios[22].Funcionario; }
             
-            //SqlConnection conexao = new SqlConnection("Server=ULTRABOOK\\SQLEXPRESS;Database=Benaiah;Trusted_Connection=True;");
-            //conexao.Open();
-            //SqlCommand comando = new SqlCommand("select nome from funcionaria where senha = @senha", conexao);
-            //comando.Parameters.AddWithValue("@senha", txtSenha.Text);
-            //using (SqlDataReader reader = comando.ExecuteReader())
-            //{
-            //    if (reader.Read())
-            //    {
-            //        nome = reader["nome"].ToString();
-            //    }
-            //}
-            //conexao.Close();
-            nome = listaFuncionarios.Where(x => x.Senha.Equals(txtSenha.Text)).Select(x => x.Funcionario).ToList()[0].ToString();
-            SetupAoAcertarSenha();
+            
+            try
+            {
+                //SqlConnection conexao = new SqlConnection("Server=ULTRABOOK\\SQLEXPRESS;Database=Benaiah;Trusted_Connection=True;");
+                //conexao.Open();
+                //SqlCommand comando = new SqlCommand("select nome from funcionaria where senha = @senha", conexao);
+                //comando.Parameters.AddWithValue("@senha", txtSenha.Text);
+                //using (SqlDataReader reader = comando.ExecuteReader())
+                //{
+                //    if (reader.Read())
+                //    {
+                //        nome = reader["nome"].ToString();
+                //    }
+                //}
+                //conexao.Close();
+
+                nome = listaFuncionarios.Where(x => x.Senha.Equals(txtSenha.Text)).Select(x => x.Funcionario).ToList()[0].ToString();
+                SetupAoAcertarSenha();
+            }
+            catch
+            {
+                MessageBox.Show("Senha incorreta. Por favor, tente novamente.");
+                txtSenha.Text = "";
+                txtSenha.Focus();
+            }
         }
 
         private void SetupAoAcertarSenha()

@@ -96,7 +96,7 @@ namespace Benaiah
                     foreach (var rb in box.Controls.OfType<RadioButton>().Where(x => x.Checked))
                     {
                         //listaRespostas.Add(rb.Text);
-                        ListaDeRespostas lista = new ListaDeRespostas(nome,setor,rb.Text);
+                        ListaDeRespostas lista = new ListaDeRespostas(nome,setor, box.Text, rb.Text);
                         listaRespostas.Add(lista);
                     }
                 }
