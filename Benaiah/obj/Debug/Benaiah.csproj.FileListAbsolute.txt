@@ -1,6 +1,11 @@
+C:\projetosCsharp\Benaiah\Benaiah\obj\Debug\Benaiah.csprojResolveAssemblyReference.cache
 C:\projetosCsharp\Benaiah\Benaiah\bin\Debug\Benaiah.exe.config
 C:\projetosCsharp\Benaiah\Benaiah\bin\Debug\Benaiah.exe
 C:\projetosCsharp\Benaiah\Benaiah\bin\Debug\Benaiah.pdb
+C:\projetosCsharp\Benaiah\Benaiah\bin\Debug\EntityFramework.dll
+C:\projetosCsharp\Benaiah\Benaiah\bin\Debug\EntityFramework.SqlServer.dll
+C:\projetosCsharp\Benaiah\Benaiah\bin\Debug\EntityFramework.xml
+C:\projetosCsharp\Benaiah\Benaiah\bin\Debug\EntityFramework.SqlServer.xml
 C:\projetosCsharp\Benaiah\Benaiah\obj\Debug\Benaiah.SetorDiferente.resources
 C:\projetosCsharp\Benaiah\Benaiah\obj\Debug\Benaiah.SetorIgual.resources
 C:\projetosCsharp\Benaiah\Benaiah\obj\Debug\Benaiah.Inicio.resources
@@ -8,8 +13,3 @@ C:\projetosCsharp\Benaiah\Benaiah\obj\Debug\Benaiah.Properties.Resources.resourc
 C:\projetosCsharp\Benaiah\Benaiah\obj\Debug\Benaiah.csproj.GenerateResource.Cache
 C:\projetosCsharp\Benaiah\Benaiah\obj\Debug\Benaiah.exe
 C:\projetosCsharp\Benaiah\Benaiah\obj\Debug\Benaiah.pdb
-C:\projetosCsharp\Benaiah\Benaiah\obj\Debug\Benaiah.csprojResolveAssemblyReference.cache
-C:\projetosCsharp\Benaiah\Benaiah\bin\Debug\EntityFramework.dll
-C:\projetosCsharp\Benaiah\Benaiah\bin\Debug\EntityFramework.SqlServer.dll
-C:\projetosCsharp\Benaiah\Benaiah\bin\Debug\EntityFramework.xml
-C:\projetosCsharp\Benaiah\Benaiah\bin\Debug\EntityFramework.SqlServer.xml

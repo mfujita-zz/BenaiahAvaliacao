@@ -1,5 +1,6 @@
 QUEM É DO SETOR COZINHA
 
+Pergunta sobre quem trabalha na cozinha
 1. Permanece regularmente no local de trabalho para execução de suas atribuições.		
 2. Cumpre o horário estabelecido.	
 3. Informa antecipadamente imprevistos que impeçam o seu comparecimento ou cumprimento do horário.	
@@ -17,15 +18,10 @@ QUEM É DO SETOR COZINHA
 	A menor parte do tempo
 	Sempre
 	Nunca
-	Obs.:
-	
+	Obs.:	
 Se nome for Tamires
 14. Liderança (encoraja o trabalho em equipe, direciona e conduz projetos).
-	Excede expectativas
-	Atinge Expectativas
-	Precisa melhorar
-	Insatisfatório
-	OBS:
+
 
 Pergunta sobre quem trabalha na enfermagem
 1. Permanece regularmente no local de trabalho para execução de suas atribuições.		
@@ -68,8 +64,7 @@ Pergunta sobre quem trabalha na técnica
 	Atinge Expectativas
 	Precisa melhorar
 	Insatisfatório
-	OBS:	
-
+	OBS:
 Se nome for Juliana
 14. Liderança (encoraja o trabalho em equipe, direciona e conduz projetos).
 	Excede expectativas
@@ -77,6 +72,19 @@ Se nome for Juliana
 	Precisa melhorar
 	Insatisfatório
 	OBS:
+	
+Pergunta sobre quem trabalha no setor OUTROS
+4. Relaciona-se bem com os colegas de trabalho.
+5. Trata com cortesia e respeito os idosos que precisam do trabalho designado.
+10. Colabora com os colegas de trabalho, visando manter a coesão e a harmonia na equipe.
+18. Técnica/funcional (tem profundo conhecimento e capacidade em sua especialidade).
+	A maior parte do tempo
+	A menor parte do tempo
+	Sempre
+	Nunca
+	Obs.:
+
+
 
 QUEM É DO SETOR ENFERMAGEM
 
@@ -100,7 +108,13 @@ Pergunta sobre quem trabalha na enfermagem
 11. Busca novos conhecimentos que contribuam para o desenvolvimento dos trabalhos.
 12. Habilidade para perceber, interpretar e discernir aspectos importantes no desenvolvimento do trabalho.		
 13. Capacidade de lidar com situações fora da rotina e a habilidade para criar e desenvolver novas ideias, percebendo, interpretando e discernindo aspectos importantes no desenvolvimento do trabalho.
-
+15. Comunicação (ouve e encoraja outros expressar suas ideias e opiniões de modo objetivo).
+16. Trabalho em equipe (contribui ativamente para o esforço da equipe, divide seu conhecimento e experiência com os outros).
+17. Solução de problemas (toma decisões e faz julgamentos informais sobre como executar o trabalho; pensa estrategicamente, criativa nas propostas para solução de problemas).
+18. Técnica/funcional (tem profundo conhecimento e capacidade em sua especialidade).
+19. Melhoria Contínua (promove inovações, busca aperfeiçoar-se).
+20. Capacidade de organização (organização do tempo e distribuição de serviços).
+21. Visão global do ambiente (entendimento do processo de atendimento dos idosos).
 Se nome for Mariana
 14. Liderança (encoraja o trabalho em equipe, direciona e conduz projetos).
 	Excede expectativas
@@ -109,7 +123,7 @@ Se nome for Mariana
 	Insatisfatório
 	OBS:
 
-Pergunta sobre quem trabalha na serviços gerais
+Pergunta sobre quem trabalha no setor serviços gerais
 1. Permanece regularmente no local de trabalho para execução de suas atribuições.	
 4. Relaciona-se bem com os colegas de trabalho.
 5. Trata com cortesia e respeito os idosos que precisam do trabalho designado.
@@ -139,15 +153,26 @@ Pergunta sobre quem trabalha na técnica
 	Atinge Expectativas
 	Precisa melhorar
 	Insatisfatório
-	OBS:
-	
+	OBS:	
 Se nome for Juliana
-	14. Liderança (encoraja o trabalho em equipe, direciona e conduz projetos).
+14. Liderança (encoraja o trabalho em equipe, direciona e conduz projetos).
 	Excede expectativas
 	Atinge Expectativas
 	Precisa melhorar
 	Insatisfatório
 	OBS:
+	
+Pergunta sobre quem trabalha no setor OUTROS
+4. Relaciona-se bem com os colegas de trabalho.
+5. Trata com cortesia e respeito os idosos que precisam do trabalho designado.
+10. Colabora com os colegas de trabalho, visando manter a coesão e a harmonia na equipe.
+17. Solução de problemas (toma decisões e faz julgamentos informais sobre como executar o trabalho; pensa estrategicamente, criativa nas propostas para solução de problemas).
+18. Técnica/funcional (tem profundo conhecimento e capacidade em sua especialidade).
+	A maior parte do tempo
+	A menor parte do tempo
+	Sempre
+	Nunca
+	Obs.:
 
 
 QUEM É DO SETOR SERVIÇOS GERAIS
@@ -157,13 +182,13 @@ Pergunta sobre quem trabalha na cozinha
 5. Trata com cortesia e respeito os idosos que precisam do trabalho designado.
 10. Colabora com os colegas de trabalho, visando manter a coesão e a harmonia na equipe.
 
-Pergunta sobre quem trabalha na enfermagem
+Pergunta sobre quem trabalha na ENFERMAGEM
 1. Permanece regularmente no local de trabalho para execução de suas atribuições.	
 4. Relaciona-se bem com os colegas de trabalho.
 5. Trata com cortesia e respeito os idosos que precisam do trabalho designado.
 10. Colabora com os colegas de trabalho, visando manter a coesão e a harmonia na equipe.
 
-Pergunta sobre quem trabalha na serviços gerais
+Pergunta sobre quem trabalha no setor SERVIÇOS GERAIS
 1. Permanece regularmente no local de trabalho para execução de suas atribuições.		
 2. Cumpre o horário estabelecido.	
 3. Informa antecipadamente imprevistos que impeçam o seu comparecimento ou cumprimento do horário.	
@@ -178,19 +203,39 @@ Pergunta sobre quem trabalha na serviços gerais
 12. Habilidade para perceber, interpretar e discernir aspectos importantes no desenvolvimento do trabalho.		
 13. Capacidade de lidar com situações fora da rotina e a habilidade para criar e desenvolver novas ideias, percebendo, interpretando e discernindo aspectos importantes no desenvolvimento do trabalho.
 
-Pergunta sobre quem trabalha na equipe técnica
-1. Permanece regularmente no local de trabalho para execução de suas atribuições.	
+Pergunta sobre quem trabalha na equipe técnica	
 4. Relaciona-se bem com os colegas de trabalho.
 5. Trata com cortesia e respeito os idosos que precisam do trabalho designado.
-10. Colabora com os colegas de trabalho, visando manter a coesão e a harmonia na equipe.
-
-Se nome for Juliana
-	14. Liderança (encoraja o trabalho em equipe, direciona e conduz projetos).
+	A maior parte do tempo
+	A menor parte do tempo
+	Sempre
+	Nunca
+	Obs.:
+15. Comunicação (ouve e encoraja outros expressar suas ideias e opiniões de modo objetivo).
+16. Trabalho em equipe (contribui ativamente para o esforço da equipe, divide seu conhecimento e experiência com os outros).
+17. Solução de problemas (toma decisões e faz julgamentos informais sobre como executar o trabalho; pensa
+18. Técnica/funcional (tem profundo conhecimento e capacidade em sua especialidade).
+19. Melhoria Contínua (promove inovações, busca aperfeiçoar-se).
+20. Capacidade de organização (organização do tempo e distribuição de serviços).
+21. Visão global do ambiente (entendimento do processo de atendimento dos idosos).
 	Excede expectativas
 	Atinge Expectativas
 	Precisa melhorar
 	Insatisfatório
 	OBS:
+Se nome for Juliana
+14. Liderança (encoraja o trabalho em equipe, direciona e conduz projetos).
+	Excede expectativas
+	Atinge Expectativas
+	Precisa melhorar
+	Insatisfatório
+	OBS:
+
+Pergunta sobre quem trabalha no setor OUTROS
+4. Relaciona-se bem com os colegas de trabalho.
+5. Trata com cortesia e respeito os idosos que precisam do trabalho designado.
+10. Colabora com os colegas de trabalho, visando manter a coesão e a harmonia na equipe.
+18. Técnica/funcional (tem profundo conhecimento e capacidade em sua especialidade).
 
 
 QUEM É DA EQUIPE TÉCNICA
@@ -212,7 +257,6 @@ Pergunta sobre quem trabalha na serviços gerais
 5. Trata com cortesia e respeito os idosos que precisam do trabalho designado.
 10. Colabora com os colegas de trabalho, visando manter a coesão e a harmonia na equipe.
 
-
 Pergunta sobre quem trabalha na equipe técnica
 1. Permanece regularmente no local de trabalho para execução de suas atribuições.
 2. Cumpre o horário estabelecido.
@@ -226,12 +270,90 @@ Pergunta sobre quem trabalha na equipe técnica
 10. Colabora com os colegas de trabalho, visando manter a coesão e a harmonia na equipe.
 11. Busca novos conhecimentos que contribuam para o desenvolvimento dos trabalhos.
 12. Habilidade para perceber, interpretar e discernir aspectos importantes no desenvolvimento do trabalho.
-13. Capacidade de lidar com situações fora da rotina e a habilidade para criar e desenvolver novas idéias, percebendo, interpretando e discernindo aspectos importantes no desenvolvimento do trabalho.
+13. Capacidade de lidar com situações fora da rotina e a habilidade para criar e desenvolver novas ideias, percebendo, interpretando e discernindo aspectos importantes no desenvolvimento do trabalho.
 	A maior parte do tempo
 	A menor parte do tempo
 	Sempre
 	Nunca
 	Obs.:
 14. Liderança (encoraja o trabalho em equipe, direciona e conduz projetos).
-15. Comunicação (ouve e encoraja outros expressar suas idéias e opiniões de modo objetivo).
+15. Comunicação (ouve e encoraja outros expressar suas ideias e opiniões de modo objetivo).
 16. Trabalho em equipe (contribui ativamente para o esforço da equipe, divide seu conhecimento e experiência com os outros).
+17. Solução de problemas (toma decisões e faz julgamentos informais sobre como executar o trabalho; pensa
+18. Técnica/funcional (tem profundo conhecimento e capacidade em sua especialidade).
+19. Melhoria Contínua (promove inovações, busca aperfeiçoar-se).
+20. Capacidade de organização (organização do tempo e distribuição de serviços).
+21. Visão global do ambiente (entendimento do processo de atendimento dos idosos).
+	Excede expectativas
+	Atinge Expectativas
+	Precisa melhorar
+	Insatisfatório
+	OBS:
+
+Pergunta sobre quem trabalha no setor OUTROS
+4. Relaciona-se bem com os colegas de trabalho.
+5. Trata com cortesia e respeito os idosos que precisam do trabalho designado.
+10. Colabora com os colegas de trabalho, visando manter a coesão e a harmonia na equipe.
+17. Solução de problemas (toma decisões e faz julgamentos informais sobre como executar o trabalho; pensa estrategicamente, criativa nas propostas para solução de problemas).
+18. Técnica/funcional (tem profundo conhecimento e capacidade em sua especialidade).
+	Excede expectativas
+	Atinge Expectativas
+	Precisa melhorar
+	Insatisfatório
+	OBS:
+
+Quem trabalha no setor Outros
+Cozinha
+1. Permanece regularmente no local de trabalho para execução de suas atribuições.
+4. Relaciona-se bem com os colegas de trabalho.
+5. Trata com cortesia e respeito os idosos que precisam do trabalho designado.
+10. Colabora com os colegas de trabalho, visando manter a coesão e a harmonia na equipe.
+
+Enfermagem
+1. Permanece regularmente no local de trabalho para execução de suas atribuições.
+4. Relaciona-se bem com os colegas de trabalho.
+5. Trata com cortesia e respeito os idosos que precisam do trabalho designado.
+10. Colabora com os colegas de trabalho, visando manter a coesão e a harmonia na equipe.
+
+Serviços gerais
+1. Permanece regularmente no local de trabalho para execução de suas atribuições.
+4. Relaciona-se bem com os colegas de trabalho.
+5. Trata com cortesia e respeito os idosos que precisam do trabalho designado.
+10. Colabora com os colegas de trabalho, visando manter a coesão e a harmonia na equipe.
+
+Técnica
+4. Relaciona-se bem com os colegas de trabalho.
+5. Trata com cortesia e respeito os idosos que precisam do trabalho designado.
+15. Comunicação (ouve e encoraja outros expressar suas ideias e opiniões de modo objetivo).
+16. Trabalho em equipe (contribui ativamente para o esforço da equipe, divide seu conhecimento e experiência com os outros).
+17. Solução de problemas (toma decisões e faz julgamentos informais sobre como executar o trabalho; pensa estrategicamente, criativa nas propostas para solução de problemas).
+18. Técnica/funcional (tem profundo conhecimento e capacidade em sua especialidade).
+19. Melhoria Contínua (promove inovações, busca aperfeiçoar-se).
+20. Capacidade de organização (organização do tempo e distribuição de serviços).
+21. Visão global do ambiente (entendimento do processo de atendimento dos idosos).
+Se for Juliana
+14. Liderança (encoraja o trabalho em equipe, direciona e conduz projetos).
+	Excede expectativas
+	Atinge Expectativas
+	Precisa melhorar
+	Insatisfatório
+	OBS:
+Pergunta sobre quem trabalha no setor OUTROS
+1. Permanece regularmente no local de trabalho para execução de suas atribuições.
+2. Cumpre o horário estabelecido.
+3. Informa antecipadamente imprevistos que impeçam o seu comparecimento ou cumprimento do horário.
+4. Relaciona-se bem com os colegas de trabalho.
+5. Trata com cortesia e respeito os idosos que precisam do trabalho designado.
+6. Age de acordo com as normas legais e regulamentares.
+7. Organiza suas atividades diárias para realizá-las no prazo estabelecido.
+8. Realiza com qualidade as atividades que lhe são designadas.
+9. Apresenta sugestões para o aperfeiçoamento do serviço.
+10. Colabora com os colegas de trabalho, visando manter a coesão e a harmonia na equipe.
+11. Busca novos conhecimentos que contribuam para o desenvolvimento dos trabalhos.
+12. Habilidade para perceber, interpretar e discernir aspectos importantes no desenvolvimento do trabalho.
+13. Capacidade de lidar com situações fora da rotina e a habilidade para criar e desenvolver novas ideias, percebendo, interpretando e discernindo aspectos importantes no desenvolvimento do trabalho.
+	A maior parte do tempo
+	A menor parte do tempo
+	Sempre
+	Nunca
+	Obs.:

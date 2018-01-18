@@ -86,6 +86,7 @@ namespace Benaiah
             //listaFuncionarios.Add(new Funcionarios("FERNANDA DE OLIVEIRA VIEIRA", "Outros"));
             //listaFuncionarios.Add(new Funcionarios("VANILDE MARTINELI DE OLIVEIRA CAMARGO", "Outros"));
 
+            //Será removido
             SqlConnection conexao = new SqlConnection("Server = ULTRABOOK\\SQLEXPRESS; Database = Benaiah; Trusted_Connection = True;");
             conexao.Open();
             SqlCommand comando = new SqlCommand("select nome, setor, senha from funcionaria", conexao);
@@ -164,22 +165,143 @@ namespace Benaiah
         {
             Hide();
 
-            foreach (var item in listaFuncionarios)
+            //foreach (var item in listaFuncionarios)
+            //{
+            //    if (!item.Funcionario.Equals(nome))
+            //    {
+            //        var categoria = listaFuncionarios.Where(p => p.Funcionario.Equals(nome)).Select(x => x.Setor).ToList();
+            //        if (categoria[0].ToString().Equals(item.Setor))
+            //        {
+            //            SetorIgual sIgual = new SetorIgual(item.Funcionario, item.Setor);
+            //            sIgual.ShowDialog();
+            //            todasRespostas.AddRange(SetorIgual.listaRespostas);
+            //        }
+            //        else
+            //        {
+            //            SetorDiferente sDiferente = new SetorDiferente(item.Funcionario, item.Setor);
+            //            sDiferente.ShowDialog();
+            //            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+            //        }
+            //    }
+            //}
+
+            SqlConnection conexao = new SqlConnection("Server=ULTRABOOK\\SQLEXPRESS;Database=Benaiah;Trusted_Connection=True;");
+            conexao.Open();
+            SqlCommand comando = new SqlCommand("select nome, setor from funcionaria", conexao);
+            using (SqlDataReader reader = comando.ExecuteReader())
             {
-                if (!item.Funcionario.Equals(nome))
+                while (reader.Read())
                 {
-                    var categoria = listaFuncionarios.Where(p => p.Funcionario.Equals(nome)).Select(x => x.Setor).ToList();
-                    if (categoria[0].ToString().Equals(item.Setor))
+                    if (reader["nome"].ToString() != nome)
                     {
-                        SetorIgual sIgual = new SetorIgual(item.Funcionario, item.Setor);
-                        sIgual.ShowDialog();
-                        todasRespostas.AddRange(SetorIgual.listaRespostas);
-                    }
-                    else
-                    {
-                        SetorDiferente sDiferente = new SetorDiferente(item.Funcionario, item.Setor);
-                        sDiferente.ShowDialog();
-                        todasRespostas.AddRange(SetorDiferente.listaRespostas);
+                        while (reader.Read())
+                        {
+                            //if (reader["setor"] == reader["setor"])
+                            //{
+                            //    SetorIgual sIgual = new SetorIgual(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim());
+                            //    sIgual.ShowDialog();
+                            //    todasRespostas.AddRange(SetorIgual.listaRespostas);
+                            //}
+                            //else
+                            //{
+                            //    SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim());
+                            //    sDiferente.ShowDialog();
+                            //    todasRespostas.AddRange(SetorDiferente.listaRespostas);
+                            //}
+                            if (reader["setor"].ToString().Trim().Equals("Cozinha"))
+                            {
+                                SetorIgual sIgual = new SetorIgual(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim());
+                                sIgual.ShowDialog();
+                            }
+                            else
+                            {
+                                if (reader["setor"].ToString().Trim().Equals("Enfermagem") || reader["setor"].ToString().Trim().Equals("Serviços gerais"))
+                                {
+                                    SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim());
+                                    sDiferente.ShowDialog();
+                                }
+                                else if (reader["setor"].ToString().Trim().Equals("Técnica"))
+                                {
+
+                                }
+                                else if (reader["setor"].ToString().Trim().Equals("Outros"))
+                                {
+
+                                }
+                            }
+
+                            if (reader["setor"].ToString().Trim().Equals("Enfermagem"))
+                            {
+
+                            }
+                            else
+                            {
+                                if (reader["setor"].ToString().Trim().Equals("Cozinha") || reader["setor"].ToString().Trim().Equals("Serviços gerais"))
+                                {
+
+                                }
+                                else if (reader["setor"].ToString().Trim().Equals("Técnica"))
+                                {
+
+                                }
+                                else if (reader["setor"].ToString().Trim().Equals("Outros"))
+                                {
+
+                                }
+                            }
+
+                            if (reader["setor"].ToString().Trim().Equals("Serviços gerais"))
+                            {
+
+                            }
+                            else
+                            {
+                                if (reader["setor"].ToString().Trim().Equals("Cozinha") || reader["setor"].ToString().Trim().Equals("Enfermagem"))
+                                {
+
+                                }
+                                else if (reader["setor"].ToString().Trim().Equals("Técnica"))
+                                {
+
+                                }
+                                else if (reader["setor"].ToString().Trim().Equals("Outros"))
+                                {
+
+                                }
+                            }
+
+                            if (reader["setor"].ToString().Trim().Equals("Técnica"))
+                            {
+
+                            }
+                            else
+                            {
+                                if (reader["setor"].ToString().Trim().Equals("Cozinha") || reader["setor"].ToString().Trim().Equals("Enfermagem") || reader["setor"].ToString().Trim().Equals("Serviços gerais"))
+                                {
+
+                                }
+                                else if (reader["setor"].ToString().Trim().Equals("Outros"))
+                                {
+
+                                }
+                            }
+
+                            if (reader["setor"].ToString().Trim().Equals("Outros"))
+                            {
+
+                            }
+                            else
+                            {
+                                if (reader["setor"].ToString().Trim().Equals("Cozinha") || reader["setor"].ToString().Trim().Equals("Enfermagem") || reader["setor"].ToString().Trim().Equals("Serviços gerais"))
+                                {
+
+                                }
+                                else if (reader["setor"].ToString().Trim().Equals("Técnica"))
+                                {
+
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -189,21 +311,7 @@ namespace Benaiah
 
             Close();
 
-            //SqlConnection conexao = new SqlConnection("Server=ULTRABOOK\\SQLEXPRESS;Database=Benaiah;Trusted_Connection=True;");
-            //conexao.Open();
-            //SqlCommand comando = new SqlCommand("select nome from funcionaria");
-            //using (SqlDataReader reader = comando.ExecuteReader())
-            //{
-            //    while(reader.Read())
-            //    {
-            //        if (reader["nome"].ToString() != nome)
-            //        {
-            //            comando = new SqlCommand("select setor from funcionaria where nome = @nome", conexao);
-            //            comando.Parameters.AddWithValue("@nome", nome);
-            //            comando.ExecuteReader();
-            //        }
-            //    }
-            //}
+            
         }
     }
 }

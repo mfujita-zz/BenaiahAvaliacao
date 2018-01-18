@@ -28,6 +28,7 @@ namespace Benaiah
 
         private void SetorIgual_Load(object sender, EventArgs e)
         {
+            int indiceUltimoGroupbox = 12;
             panel1.Size = new Size(ClientRectangle.Width, Height * 90 / 100);
             panel1.Location = new Point(0, 50);
             panel1.AutoScroll = true;
@@ -87,9 +88,18 @@ namespace Benaiah
                 {
                     CriaGroupBoxes(i, "13. Capacidade de lidar com situações fora da rotina e a habilidade para criar e desenvolver novas ideias, percebendo, interpretando e discernindo aspectos importantes no desenvolvimento do trabalho.");
                 }
+            }            
+
+            if (nome.Equals("TAMIRES DE ANGELO CANDIDO"))
+            {
+                CriaGroupBoxes(13, "14. Liderança (encoraja o trabalho em equipe, direciona e conduz projetos)");
+                indiceUltimoGroupbox = 13;
             }
 
-            foreach (var item in panel1.Controls.OfType<GroupBox>().Where(x => x.Tag.ToString().Equals("12")))
+            /*int indiceUltimoGroupbox = ContagemGrupbox();*/ // Para posicionar abaixo do último groupbox o botão CONFIRMAR precisa contar a quantidade de grupbox
+
+            //Procura o último groupbox para posicionar o botão CONFIRMAR.
+            foreach (var item in panel1.Controls.OfType<GroupBox>().Where(x => x.Tag.ToString().Equals(indiceUltimoGroupbox.ToString())))
             {
                 BtnConfirmar.Location = new Point((panel1.Right - BtnConfirmar.Width)/2, item.Bottom+100);
             }
@@ -103,29 +113,53 @@ namespace Benaiah
                     rb.Checked = true;
                 }
             }
-            
         }
 
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
-            int contaRespostas = 0;
+            //int contaRespostas = 0;
+            //foreach (var item in panel1.Controls.OfType<GroupBox>())
+            //{
+            //    foreach (var rb in item.Controls.OfType<RadioButton>().Where(x => x.Checked))
+            //    {
+            //        contaRespostas++;
+            //    }
+            //}
+
+            //if (contaRespostas != 13)
+            //{
+            //    MessageBox.Show("Verifique a questão sem resposta.");
+            //}
+            //else
+            //{
+            //    //List<string> listaRespostas = new List<string>();                
+
+            //    foreach (var box in panel1.Controls.OfType<GroupBox>())
+            //    {
+            //        foreach (var rb in box.Controls.OfType<RadioButton>().Where(x => x.Checked))
+            //        {
+            //            //listaRespostas.Add(rb.Text);
+            //            ListaDeRespostas lista = new ListaDeRespostas(nome, setor, box.Text, rb.Text);
+            //            listaRespostas.Add(lista);
+            //        }
+            //    }
+
+            //    Close(); // Se as 13 respostas foram preenchidas, permite sair do form
+            //}
+
+            int qtdeGroupbox = ContagemGrupbox(); // Conta a quantidade de groupbox
+            int qtdeRadiobuttonChecked = 0; // conta a quantidade de radiobutton marcado
+
             foreach (var item in panel1.Controls.OfType<GroupBox>())
             {
                 foreach (var rb in item.Controls.OfType<RadioButton>().Where(x => x.Checked))
                 {
-                    contaRespostas++;
+                    qtdeRadiobuttonChecked++;
                 }
             }
 
-            if (contaRespostas != 13)
+            if (qtdeGroupbox == qtdeRadiobuttonChecked) // Se a quantidade de groupbox for igual a de radiobutton marcado, então todas as respostas foram marcadas
             {
-                MessageBox.Show("Verifique a questão sem resposta.");
-            }
-            else
-            {
-                //List<string> listaRespostas = new List<string>();
-                
-
                 foreach (var box in panel1.Controls.OfType<GroupBox>())
                 {
                     foreach (var rb in box.Controls.OfType<RadioButton>().Where(x => x.Checked))
@@ -136,9 +170,24 @@ namespace Benaiah
                     }
                 }
 
-
-                Close(); // Se as 13 respostas foram preenchidas, permite sair do form
+                Close();
             }
+            else
+            {
+                MessageBox.Show("Verifique a questão sem resposta.");
+            }
+        }
+
+        private int ContagemGrupbox()
+        {
+            int qtdeGroupbox = 0; // Conta a quantidade de groupbox
+            
+            foreach (var item in panel1.Controls.OfType<GroupBox>())
+            {
+                qtdeGroupbox++;
+            }
+
+            return qtdeGroupbox;
         }
 
         private void CriaGroupBoxes(int num, string texto)
