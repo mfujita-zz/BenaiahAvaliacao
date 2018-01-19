@@ -25,11 +25,10 @@ insert into Funcionaria (ID_func, setor, nome, senha) values(23, 'Serviços gera
 insert into Funcionaria (ID_func, setor, nome, senha) values(24, 'Técnica', 'JULIANA PINARELLI DE CURTIS', '24')                  
 insert into Funcionaria (ID_func, setor, nome, senha) values(25, 'Técnica', 'MARCELA CRISTINA BARBERA', '25')                  
 insert into Funcionaria (ID_func, setor, nome, senha) values(26, 'Técnica', 'MARIANA SINICIATO HENRIQUES', '26')                  
-insert into Funcionaria (ID_func, setor, nome, senha) values(27, 'Técnica', 'ROSANA DE CAMARGO VALOTO', '27')                  
-insert into Funcionaria (ID_func, setor, nome, senha) values(28, 'Técnica', 'TAMIRES DE ANGELO CANDIDO', '28')                  
-insert into Funcionaria (ID_func, setor, nome, senha) values(29, 'Técnica', 'VIVIANE LEMBO', '29')                  
-insert into Funcionaria (ID_func, setor, nome, senha) values(29, 'Outros',  'FERNANDA DE OLIVEIRA VIEIRA', '30')                  
-insert into Funcionaria (ID_func, setor, nome, senha) values(31, 'Outros',  'VANILDE MARTINELI DE OLIVEIRA CAMARGO', '31')                  
+insert into Funcionaria (ID_func, setor, nome, senha) values(27, 'Técnica', 'ROSANA DE CAMARGO VALOTO', '27')                                  
+insert into Funcionaria (ID_func, setor, nome, senha) values(28, 'Técnica', 'VIVIANE LEMBO', '28')                  
+insert into Funcionaria (ID_func, setor, nome, senha) values(29, 'Outros',  'FERNANDA DE OLIVEIRA VIEIRA', '29')                  
+insert into Funcionaria (ID_func, setor, nome, senha) values(30, 'Outros',  'VANILDE MARTINELI DE OLIVEIRA CAMARGO', '30')                  
 
 
 create table Respostas (

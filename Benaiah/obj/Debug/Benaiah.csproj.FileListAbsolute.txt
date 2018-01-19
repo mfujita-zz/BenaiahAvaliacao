@@ -13,3 +13,4 @@ C:\projetosCsharp\Benaiah\Benaiah\obj\Debug\Benaiah.Properties.Resources.resourc
 C:\projetosCsharp\Benaiah\Benaiah\obj\Debug\Benaiah.csproj.GenerateResource.Cache
 C:\projetosCsharp\Benaiah\Benaiah\obj\Debug\Benaiah.exe
 C:\projetosCsharp\Benaiah\Benaiah\obj\Debug\Benaiah.pdb
+C:\projetosCsharp\Benaiah\Benaiah\obj\Debug\Benaiah.Tecnica.resources

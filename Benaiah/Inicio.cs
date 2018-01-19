@@ -14,7 +14,8 @@ namespace Benaiah
     public partial class Inicio : Form
     {
         List<Funcionarios> listaFuncionarios;
-        private string nome;
+        private string nomeEntrevistada;
+        private string setorEntrevistada;
         List<ListaDeRespostas> todasRespostas = new List<ListaDeRespostas>(); 
 
         public Inicio()
@@ -129,20 +130,21 @@ namespace Benaiah
             
             try
             {
-                //SqlConnection conexao = new SqlConnection("Server=ULTRABOOK\\SQLEXPRESS;Database=Benaiah;Trusted_Connection=True;");
-                //conexao.Open();
-                //SqlCommand comando = new SqlCommand("select nome from funcionaria where senha = @senha", conexao);
-                //comando.Parameters.AddWithValue("@senha", txtSenha.Text);
-                //using (SqlDataReader reader = comando.ExecuteReader())
-                //{
-                //    if (reader.Read())
-                //    {
-                //        nome = reader["nome"].ToString();
-                //    }
-                //}
-                //conexao.Close();
+                SqlConnection conexao = new SqlConnection("Server=ULTRABOOK\\SQLEXPRESS;Database=Benaiah;Trusted_Connection=True;");
+                conexao.Open();
+                SqlCommand comando = new SqlCommand("select nome, setor from funcionaria where senha = @senha", conexao);
+                comando.Parameters.AddWithValue("@senha", txtSenha.Text);
+                using (SqlDataReader reader = comando.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        nomeEntrevistada = reader["nome"].ToString().Trim();
+                        setorEntrevistada = reader["setor"].ToString().Trim();
+                    }
+                }
+                conexao.Close();
 
-                nome = listaFuncionarios.Where(x => x.Senha.Equals(txtSenha.Text)).Select(x => x.Funcionario).ToList()[0].ToString();
+                //nomeEntrevistada = listaFuncionarios.Where(x => x.Senha.Equals(txtSenha.Text)).Select(x => x.Funcionario).ToList()[0].ToString();
                 SetupAoAcertarSenha();
             }
             catch
@@ -158,7 +160,7 @@ namespace Benaiah
             lblIdentificada.Visible = true;
             lblNomeFuncionaria.Visible = true;
             BtnIniciar.Visible = true;
-            lblNomeFuncionaria.Text = nome;
+            lblNomeFuncionaria.Text = nomeEntrevistada;
         }
 
         private void BtnIniciar_Click(object sender, EventArgs e)
@@ -192,7 +194,7 @@ namespace Benaiah
             {
                 while (reader.Read())
                 {
-                    if (reader["nome"].ToString() != nome)
+                    if (reader["nome"].ToString() != nomeEntrevistada)
                     {
                         while (reader.Read())
                         {
@@ -208,99 +210,47 @@ namespace Benaiah
                             //    sDiferente.ShowDialog();
                             //    todasRespostas.AddRange(SetorDiferente.listaRespostas);
                             //}
-                            if (reader["setor"].ToString().Trim().Equals("Cozinha"))
-                            {
+                            if (setorEntrevistada.Equals("Cozinha") && reader["setor"].ToString().Trim().Equals("Cozinha"))
+                            {                               
                                 SetorIgual sIgual = new SetorIgual(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim());
-                                sIgual.ShowDialog();
+                                sIgual.ShowDialog();                                                             
                             }
-                            else
+                            if (setorEntrevistada.Equals("Cozinha") && reader["setor"].ToString().Trim().Equals("Enfermagem"))
                             {
-                                if (reader["setor"].ToString().Trim().Equals("Enfermagem") || reader["setor"].ToString().Trim().Equals("Serviços gerais"))
-                                {
-                                    SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim());
-                                    sDiferente.ShowDialog();
-                                }
-                                else if (reader["setor"].ToString().Trim().Equals("Técnica"))
-                                {
-
-                                }
-                                else if (reader["setor"].ToString().Trim().Equals("Outros"))
-                                {
-
-                                }
+                                SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim());
+                                sDiferente.ShowDialog();
                             }
-
-                            if (reader["setor"].ToString().Trim().Equals("Enfermagem"))
+                            if (setorEntrevistada.Equals("Cozinha") && reader["setor"].ToString().Trim().Equals("Serviços gerais"))
                             {
-
+                                SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim());
+                                sDiferente.ShowDialog();
                             }
-                            else
+                            if (setorEntrevistada.Equals("Cozinha") && reader["setor"].ToString().Trim().Equals("Técnica"))
                             {
-                                if (reader["setor"].ToString().Trim().Equals("Cozinha") || reader["setor"].ToString().Trim().Equals("Serviços gerais"))
-                                {
-
-                                }
-                                else if (reader["setor"].ToString().Trim().Equals("Técnica"))
-                                {
-
-                                }
-                                else if (reader["setor"].ToString().Trim().Equals("Outros"))
-                                {
-
-                                }
+                                Tecnica tecnica = new Tecnica(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim());
+                                tecnica.ShowDialog();
                             }
-
-                            if (reader["setor"].ToString().Trim().Equals("Serviços gerais"))
+                            if (setorEntrevistada.Equals("Cozinha") && reader["setor"].ToString().Trim().Equals("Outros"))
                             {
-
+                                //Tecnica tecnica = new Tecnica(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim());
+                                //tecnica.ShowDialog();
                             }
-                            else
-                            {
-                                if (reader["setor"].ToString().Trim().Equals("Cozinha") || reader["setor"].ToString().Trim().Equals("Enfermagem"))
-                                {
+                            //else if (setorEntrevistada.Equals("Enfermagem"))
+                            //{
+                            //    MessageBox.Show("Enfermagem");
+                            //}
+                            //else if (reader["setor"].ToString().Trim().Equals("Serviços gerais"))
+                            //{
 
-                                }
-                                else if (reader["setor"].ToString().Trim().Equals("Técnica"))
-                                {
+                            //}
+                            //else if (reader["setor"].ToString().Trim().Equals("Técnica"))
+                            //{
 
-                                }
-                                else if (reader["setor"].ToString().Trim().Equals("Outros"))
-                                {
+                            //}
+                            //else if (reader["setor"].ToString().Trim().Equals("Outros"))
+                            //{
 
-                                }
-                            }
-
-                            if (reader["setor"].ToString().Trim().Equals("Técnica"))
-                            {
-
-                            }
-                            else
-                            {
-                                if (reader["setor"].ToString().Trim().Equals("Cozinha") || reader["setor"].ToString().Trim().Equals("Enfermagem") || reader["setor"].ToString().Trim().Equals("Serviços gerais"))
-                                {
-
-                                }
-                                else if (reader["setor"].ToString().Trim().Equals("Outros"))
-                                {
-
-                                }
-                            }
-
-                            if (reader["setor"].ToString().Trim().Equals("Outros"))
-                            {
-
-                            }
-                            else
-                            {
-                                if (reader["setor"].ToString().Trim().Equals("Cozinha") || reader["setor"].ToString().Trim().Equals("Enfermagem") || reader["setor"].ToString().Trim().Equals("Serviços gerais"))
-                                {
-
-                                }
-                                else if (reader["setor"].ToString().Trim().Equals("Técnica"))
-                                {
-
-                                }
-                            }
+                            //}
                         }
                     }
                 }
