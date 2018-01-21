@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Benaiah
 {
-    public partial class SetorIgual : Form
+    public partial class TecnicaMesmoSetor : Form
     {
         private string nomeAvaliada;
         private string setorAvaliada;
         private string setorAvaliadora;
         public static List<ListaDeRespostas> listaRespostas { get; set; }
 
-        public SetorIgual(string nomeFuncionaria, string setorFuncionaria, string _setorAvaliadora)
+        public TecnicaMesmoSetor(string nomeFuncionaria, string setorFuncionaria, string _setorAvaliadora)
         {
             InitializeComponent();
             txtNome.Text = "Avalie " + nomeFuncionaria + " (" + setorFuncionaria + ")";
@@ -28,9 +28,9 @@ namespace Benaiah
             listaRespostas = new List<ListaDeRespostas>();
         }
 
-        private void SetorIgual_Load(object sender, EventArgs e)
+        private void TecnicaMesmoSetor_Load(object sender, EventArgs e)
         {
-            int indiceUltimoGroupbox = 12;
+            //int indiceUltimoGroupbox = 20;
             panel1.Size = new Size(ClientRectangle.Width, Height * 90 / 100);
             panel1.Location = new Point(0, 50);
             panel1.AutoScroll = true;
@@ -38,7 +38,7 @@ namespace Benaiah
 
             DesenhaFormulario formulario = new DesenhaFormulario(panel1);
 
-            for (int i = 0; i < 13; i++)
+            for (int i = 0; i < 20; i++)
             {
                 if (i == 0)
                 {
@@ -92,16 +92,47 @@ namespace Benaiah
                 {
                     formulario.CriaGroupBoxes(i, "13. Capacidade de lidar com situações fora da rotina e a habilidade para criar e desenvolver novas ideias, percebendo, interpretando e discernindo aspectos importantes no desenvolvimento do trabalho.");
                 }
-            }            
+                else if (i == 13)
+                {
+                    formulario.CriaGroupBoxes(i, "14. Comunicação (ouve e encoraja outros expressar suas ideias e opiniões de modo objetivo).");
+                }
+                else if (i == 14)
+                {
+                    formulario.CriaGroupBoxes(i, "15. Trabalho em equipe (contribui ativamente para o esforço da equipe, divide seu conhecimento e experiência com os outros).");
+                }
+                else if (i == 15)
+                {
+                    formulario.CriaGroupBoxes(i, "16. Solução de problemas (toma decisões e faz julgamentos informais sobre como executar o trabalho; pensa estrategicamente, criativa nas propostas para solução de problemas).");
+                }
+                else if (i == 16)
+                {
+                    formulario.CriaGroupBoxes(i, "17. Técnica/funcional (tem profundo conhecimento e capacidade em sua especialidade).");
+                }
+                else if (i == 17)
+                {
+                    formulario.CriaGroupBoxes(i, "18. Melhoria Contínua (promove inovações, busca aperfeiçoar-se).");
+                }
+                else if (i == 18)
+                {
+                    formulario.CriaGroupBoxes(i, "19. Capacidade de organização (organização do tempo e distribuição de serviços).");
+                }
+                else if (i == 19)
+                {
+                    formulario.CriaGroupBoxes(i, "20. Visão global do ambiente (entendimento do processo de atendimento dos idosos).");
+                }
+            }
 
+            if (nomeAvaliada.Equals("JULIANA PINARELLI DE CURTIS"))
+            {
+                formulario.CriaGroupBoxes(20, "21. Liderança (encoraja o trabalho em equipe, direciona e conduz projetos).");
+            }
 
-
-            /*int indiceUltimoGroupbox = ContagemGrupbox();*/ // Para posicionar abaixo do último groupbox o botão CONFIRMAR precisa contar a quantidade de grupbox
+            int indiceUltimoGroupbox = formulario.ContagemGrupbox(); // Para posicionar abaixo do último groupbox o botão CONFIRMAR precisa contar a quantidade de grupbox
 
             //Procura o último groupbox para posicionar o botão CONFIRMAR.
             foreach (var item in panel1.Controls.OfType<GroupBox>().Where(x => x.Tag.ToString().Equals(indiceUltimoGroupbox.ToString())))
             {
-                BtnConfirmar.Location = new Point((panel1.Right - BtnConfirmar.Width)/2, item.Bottom+100);
+                BtnConfirmar.Location = new Point((panel1.Right - BtnConfirmar.Width) / 2, item.Bottom + 100);
             }
             BtnConfirmar.BackColor = Color.LightGoldenrodYellow;
             BtnConfirmar.Text = "Confirmar";
@@ -117,36 +148,6 @@ namespace Benaiah
 
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
-            //int contaRespostas = 0;
-            //foreach (var item in panel1.Controls.OfType<GroupBox>())
-            //{
-            //    foreach (var rb in item.Controls.OfType<RadioButton>().Where(x => x.Checked))
-            //    {
-            //        contaRespostas++;
-            //    }
-            //}
-
-            //if (contaRespostas != 13)
-            //{
-            //    MessageBox.Show("Verifique a questão sem resposta.");
-            //}
-            //else
-            //{
-            //    //List<string> listaRespostas = new List<string>();                
-
-            //    foreach (var box in panel1.Controls.OfType<GroupBox>())
-            //    {
-            //        foreach (var rb in box.Controls.OfType<RadioButton>().Where(x => x.Checked))
-            //        {
-            //            //listaRespostas.Add(rb.Text);
-            //            ListaDeRespostas lista = new ListaDeRespostas(nome, setor, box.Text, rb.Text);
-            //            listaRespostas.Add(lista);
-            //        }
-            //    }
-
-            //    Close(); // Se as 13 respostas foram preenchidas, permite sair do form
-            //}
-
             DesenhaFormulario formulario = new DesenhaFormulario(panel1);
             int qtdeGroupbox = formulario.ContagemGrupbox(); // Conta a quantidade de groupbox
             int qtdeRadiobuttonChecked = 0; // conta a quantidade de radiobutton marcado
@@ -178,67 +179,5 @@ namespace Benaiah
                 MessageBox.Show("Verifique a questão sem resposta.");
             }
         }
-
-        //private int ContagemGrupbox()
-        //{
-        //    int qtdeGroupbox = 0; // Conta a quantidade de groupbox
-            
-        //    foreach (var item in panel1.Controls.OfType<GroupBox>())
-        //    {
-        //        qtdeGroupbox++;
-        //    }
-
-        //    return qtdeGroupbox;
-        //}
-
-        //private void CriaGroupBoxes(int num, string texto)
-        //{
-        //    int distanciaVertical = 15;
-
-        //    GroupBox gb = new GroupBox();
-        //    panel1.Controls.Add(gb);
-        //    gb.Tag = num;
-        //    gb.Size = new Size(ClientRectangle.Width * 90 / 100, 250);
-        //    if (num == 0)
-        //        gb.Location = new Point(panel1.Left, 0);
-        //    else
-        //    {                
-        //        gb.Location = new Point(panel1.Left, 260*num);          
-        //    }                
-        //    gb.BackColor = Color.LightGoldenrodYellow;
-        //    gb.Text = texto;
-
-        //    RadioButton rb1 = new RadioButton();
-        //    RadioButton rb2 = new RadioButton();
-        //    RadioButton rb3 = new RadioButton();
-        //    RadioButton rb4 = new RadioButton();
-        //    gb.Controls.Add(rb1);
-        //    gb.Controls.Add(rb2);
-        //    gb.Controls.Add(rb3);
-        //    gb.Controls.Add(rb4);
-        //    rb1.Text = "A maior parte do tempo";
-        //    rb2.Text = "A menor parte do tempo";
-        //    rb3.Text = "Sempre";
-        //    rb4.Text = "Nunca";
-        //    Size tamanho = TextRenderer.MeasureText(rb1.Text, new Font("Microsoft Sans Serif", 12));
-        //    rb1.Size = new Size((int)(tamanho.Width * 1.5), (int)(tamanho.Height * 1.2));
-        //    tamanho = TextRenderer.MeasureText(rb2.Text, new Font("Microsoft Sans Serif", 12));
-        //    rb2.Size = new Size((int)(tamanho.Width * 1.5), (int)(tamanho.Height * 1.2));
-        //    tamanho = TextRenderer.MeasureText(rb3.Text, new Font("Microsoft Sans Serif", 12));
-        //    rb3.Size = new Size((int)(tamanho.Width * 1.5), (int)(tamanho.Height * 1.2));
-        //    tamanho = TextRenderer.MeasureText(rb4.Text, new Font("Microsoft Sans Serif", 12));
-        //    rb4.Size = new Size((int)(tamanho.Width * 1.5), (int)(tamanho.Height * 1.2));
-        //    rb1.Location = new Point(gb.Left + distanciaVertical, 40);
-        //    rb2.Location = new Point(gb.Left + distanciaVertical, 60);
-        //    rb3.Location = new Point(gb.Left + distanciaVertical, 80);
-        //    rb4.Location = new Point(gb.Left + distanciaVertical, 100);
-
-        //    TextBox txtObs = new TextBox();
-        //    gb.Controls.Add(txtObs);
-        //    txtObs.Tag = num;
-        //    txtObs.Multiline = true;
-        //    txtObs.Location = new Point(gb.Left + distanciaVertical, 150);
-        //    txtObs.Size = new Size(gb.Width * 90 / 100, 60); 
-        //}
     }
 }

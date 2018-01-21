@@ -14,8 +14,8 @@ namespace Benaiah
     public partial class Inicio : Form
     {
         List<Funcionarios> listaFuncionarios;
-        private string nomeEntrevistada;
-        private string setorEntrevistada;
+        private string nomeAvaliadora;
+        private string setorAvaliadora;
         List<ListaDeRespostas> todasRespostas = new List<ListaDeRespostas>(); 
 
         public Inicio()
@@ -136,10 +136,16 @@ namespace Benaiah
                 comando.Parameters.AddWithValue("@senha", txtSenha.Text);
                 using (SqlDataReader reader = comando.ExecuteReader())
                 {
-                    if (reader.Read())
+                    if (reader.Read().ToString() != "")
                     {
-                        nomeEntrevistada = reader["nome"].ToString().Trim();
-                        setorEntrevistada = reader["setor"].ToString().Trim();
+                        nomeAvaliadora = reader["nome"].ToString().Trim();
+                        setorAvaliadora = reader["setor"].ToString().Trim();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Senha incorreta. Por favor, tente novamente.");
+                        txtSenha.Text = "";
+                        txtSenha.Focus();
                     }
                 }
                 conexao.Close();
@@ -160,7 +166,7 @@ namespace Benaiah
             lblIdentificada.Visible = true;
             lblNomeFuncionaria.Visible = true;
             BtnIniciar.Visible = true;
-            lblNomeFuncionaria.Text = nomeEntrevistada;
+            lblNomeFuncionaria.Text = nomeAvaliadora;
         }
 
         private void BtnIniciar_Click(object sender, EventArgs e)
@@ -194,63 +200,179 @@ namespace Benaiah
             {
                 while (reader.Read())
                 {
-                    if (reader["nome"].ToString() != nomeEntrevistada)
+                    if (reader["nome"].ToString().Trim() != nomeAvaliadora) 
                     {
-                        while (reader.Read())
+                        //if (reader["setor"] == reader["setor"])
+                        //{
+                        //    SetorIgual sIgual = new SetorIgual(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim());
+                        //    sIgual.ShowDialog();
+                        //    todasRespostas.AddRange(SetorIgual.listaRespostas);
+                        //}
+                        //else
+                        //{
+                        //    SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim());
+                        //    sDiferente.ShowDialog();
+                        //    todasRespostas.AddRange(SetorDiferente.listaRespostas);
+                        //}
+
+                        //Cozinha
+                        if (setorAvaliadora.Equals("Cozinha") && reader["setor"].ToString().Trim().Equals("Cozinha"))
+                        {                               
+                            SetorIgual sIgual = new SetorIgual(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            sIgual.ShowDialog();
+                            todasRespostas.AddRange(SetorIgual.listaRespostas);
+                        }
+                        if (setorAvaliadora.Equals("Cozinha") && reader["setor"].ToString().Trim().Equals("Enfermagem"))
                         {
-                            //if (reader["setor"] == reader["setor"])
-                            //{
-                            //    SetorIgual sIgual = new SetorIgual(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim());
-                            //    sIgual.ShowDialog();
-                            //    todasRespostas.AddRange(SetorIgual.listaRespostas);
-                            //}
-                            //else
-                            //{
-                            //    SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim());
-                            //    sDiferente.ShowDialog();
-                            //    todasRespostas.AddRange(SetorDiferente.listaRespostas);
-                            //}
-                            if (setorEntrevistada.Equals("Cozinha") && reader["setor"].ToString().Trim().Equals("Cozinha"))
-                            {                               
-                                SetorIgual sIgual = new SetorIgual(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim());
-                                sIgual.ShowDialog();                                                             
-                            }
-                            if (setorEntrevistada.Equals("Cozinha") && reader["setor"].ToString().Trim().Equals("Enfermagem"))
-                            {
-                                SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim());
-                                sDiferente.ShowDialog();
-                            }
-                            if (setorEntrevistada.Equals("Cozinha") && reader["setor"].ToString().Trim().Equals("Serviços gerais"))
-                            {
-                                SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim());
-                                sDiferente.ShowDialog();
-                            }
-                            if (setorEntrevistada.Equals("Cozinha") && reader["setor"].ToString().Trim().Equals("Técnica"))
-                            {
-                                Tecnica tecnica = new Tecnica(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim());
-                                tecnica.ShowDialog();
-                            }
-                            if (setorEntrevistada.Equals("Cozinha") && reader["setor"].ToString().Trim().Equals("Outros"))
-                            {
-                                //Tecnica tecnica = new Tecnica(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim());
-                                //tecnica.ShowDialog();
-                            }
-                            //else if (setorEntrevistada.Equals("Enfermagem"))
-                            //{
-                            //    MessageBox.Show("Enfermagem");
-                            //}
-                            //else if (reader["setor"].ToString().Trim().Equals("Serviços gerais"))
-                            //{
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            sDiferente.ShowDialog();
+                            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+                        }
+                        if (setorAvaliadora.Equals("Cozinha") && reader["setor"].ToString().Trim().Equals("Serviços gerais"))
+                        {
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            sDiferente.ShowDialog();
+                            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+                        }
+                        if (setorAvaliadora.Equals("Cozinha") && reader["setor"].ToString().Trim().Equals("Técnica"))
+                        {
+                            Tecnica tecnica = new Tecnica(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            tecnica.ShowDialog();
+                            todasRespostas.AddRange(Tecnica.listaRespostas);
+                        }
+                        if (setorAvaliadora.Equals("Cozinha") && reader["setor"].ToString().Trim().Equals("Outros"))
+                        {
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            sDiferente.ShowDialog();
+                            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+                        }
 
-                            //}
-                            //else if (reader["setor"].ToString().Trim().Equals("Técnica"))
-                            //{
+                        //Enfermagem
+                        if (setorAvaliadora.Equals("Enfermagem") && reader["setor"].ToString().Trim().Equals("Cozinha"))
+                        {
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            sDiferente.ShowDialog();
+                            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+                        }
+                        if (setorAvaliadora.Equals("Enfermagem") && reader["setor"].ToString().Trim().Equals("Enfermagem"))
+                        {
+                            SetorIgual sIgual = new SetorIgual(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            sIgual.ShowDialog();
+                            todasRespostas.AddRange(SetorIgual.listaRespostas);
+                        }
+                        if (setorAvaliadora.Equals("Enfermagem") && reader["setor"].ToString().Trim().Equals("Serviços gerais"))
+                        {
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            sDiferente.ShowDialog();
+                            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+                        }
+                        if (setorAvaliadora.Equals("Enfermagem") && reader["setor"].ToString().Trim().Equals("Técnica"))
+                        {
+                            Tecnica tecnica = new Tecnica(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            tecnica.ShowDialog();
+                            todasRespostas.AddRange(Tecnica.listaRespostas);
+                        }
+                        if (setorAvaliadora.Equals("Enfermagem") && reader["setor"].ToString().Trim().Equals("Outros"))
+                        {
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            sDiferente.ShowDialog();
+                            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+                        }
 
-                            //}
-                            //else if (reader["setor"].ToString().Trim().Equals("Outros"))
-                            //{
+                        //Serviços gerais
+                        if (setorAvaliadora.Equals("Serviços gerais") && reader["setor"].ToString().Trim().Equals("Cozinha"))
+                        {
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            sDiferente.ShowDialog();
+                            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+                        }
+                        if (setorAvaliadora.Equals("Serviços gerais") && reader["setor"].ToString().Trim().Equals("Enfermagem"))
+                        {
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            sDiferente.ShowDialog();
+                            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+                        }
+                        if (setorAvaliadora.Equals("Serviços gerais") && reader["setor"].ToString().Trim().Equals("Serviços gerais"))
+                        {
+                            SetorIgual sIgual = new SetorIgual(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            sIgual.ShowDialog();
+                            todasRespostas.AddRange(SetorIgual.listaRespostas);
+                        }
+                        if (setorAvaliadora.Equals("Serviços gerais") && reader["setor"].ToString().Trim().Equals("Técnica"))
+                        {
+                            Tecnica tecnica = new Tecnica(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            tecnica.ShowDialog();
+                            todasRespostas.AddRange(Tecnica.listaRespostas);
+                        }
+                        if (setorAvaliadora.Equals("Serviços gerais") && reader["setor"].ToString().Trim().Equals("Outros"))
+                        {
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            sDiferente.ShowDialog();
+                            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+                        }
 
-                            //}
+                        //Técnica
+                        if (setorAvaliadora.Equals("Técnica") && reader["setor"].ToString().Trim().Equals("Cozinha"))
+                        {
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            sDiferente.ShowDialog();
+                            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+                        }
+                        if (setorAvaliadora.Equals("Técnica") && reader["setor"].ToString().Trim().Equals("Enfermagem"))
+                        {
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            sDiferente.ShowDialog();
+                            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+                        }
+                        if (setorAvaliadora.Equals("Técnica") && reader["setor"].ToString().Trim().Equals("Serviços gerais"))
+                        {
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            sDiferente.ShowDialog();
+                            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+                        }
+                        if (setorAvaliadora.Equals("Técnica") && reader["setor"].ToString().Trim().Equals("Técnica"))
+                        {
+                            TecnicaMesmoSetor tMesmoSetor = new TecnicaMesmoSetor(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            tMesmoSetor.ShowDialog();
+                            todasRespostas.AddRange(TecnicaMesmoSetor.listaRespostas);
+                        }
+                        if (setorAvaliadora.Equals("Técnica") && reader["setor"].ToString().Trim().Equals("Outros"))
+                        {
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            sDiferente.ShowDialog();
+                            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+                        }
+
+                        //Outros
+                        if (setorAvaliadora.Equals("Outros") && reader["setor"].ToString().Trim().Equals("Cozinha"))
+                        {
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            sDiferente.ShowDialog();
+                            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+                        }
+                        if (setorAvaliadora.Equals("Outros") && reader["setor"].ToString().Trim().Equals("Enfermagem"))
+                        {
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            sDiferente.ShowDialog();
+                            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+                        }
+                        if (setorAvaliadora.Equals("Outros") && reader["setor"].ToString().Trim().Equals("Serviços gerais"))
+                        {
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            sDiferente.ShowDialog();
+                            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+                        }
+                        if (setorAvaliadora.Equals("Outros") && reader["setor"].ToString().Trim().Equals("Técnica"))
+                        {
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            sDiferente.ShowDialog();
+                            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+                        }
+                        if (setorAvaliadora.Equals("Outros") && reader["setor"].ToString().Trim().Equals("Outros"))
+                        {
+                            SetorIgual sIgual = new SetorIgual(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            sIgual.ShowDialog();
+                            todasRespostas.AddRange(SetorIgual.listaRespostas);
                         }
                     }
                 }

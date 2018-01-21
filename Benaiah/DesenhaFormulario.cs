@@ -42,10 +42,20 @@ namespace Benaiah
             gb.Controls.Add(rb2);
             gb.Controls.Add(rb3);
             gb.Controls.Add(rb4);
-            rb1.Text = "A maior parte do tempo";
-            rb2.Text = "A menor parte do tempo";
-            rb3.Text = "Sempre";
-            rb4.Text = "Nunca";
+            if (num <= 12)
+            { 
+                rb1.Text = "A maior parte do tempo";
+                rb2.Text = "A menor parte do tempo";
+                rb3.Text = "Sempre";
+                rb4.Text = "Nunca";
+            }
+            else
+            {
+                rb1.Text = "Excede expectativas";
+                rb2.Text = "Atinge Expectativas";
+                rb3.Text = "Precisa melhorar";
+                rb4.Text = "Insatisfatório";
+            }
             Size tamanho = TextRenderer.MeasureText(rb1.Text, new Font("Microsoft Sans Serif", 12));
             rb1.Size = new Size((int)(tamanho.Width * 1.5), (int)(tamanho.Height * 1.2));
             tamanho = TextRenderer.MeasureText(rb2.Text, new Font("Microsoft Sans Serif", 12));
@@ -65,6 +75,18 @@ namespace Benaiah
             txtObs.Multiline = true;
             txtObs.Location = new Point(gb.Left + distanciaVertical, 150);
             txtObs.Size = new Size(gb.Width * 90 / 100, 60);
+        }
+
+        public int ContagemGrupbox()
+        {
+            int qtdeGroupbox = 0; // Conta a quantidade de groupbox
+
+            foreach (var item in panel1.Controls.OfType<GroupBox>())
+            {
+                qtdeGroupbox++;
+            }
+
+            return qtdeGroupbox;
         }
     }
 }

@@ -12,16 +12,20 @@ namespace Benaiah
 {
     public partial class Tecnica : Form
     {
-        private string nomeEntrevistada;
-        private string setorEntrevistada;
+        private string nomeAvaliada;
+        private string setorAvaliada;
+        private string setorAvaliadora;
+        public static List<ListaDeRespostas> listaRespostas { get; set; }
 
-        public Tecnica(string nomeFuncionaria, string setorFuncionaria)
+        public Tecnica(string nomeFuncionaria, string setorFuncionaria, string _setorAvaliadora)
         {
             InitializeComponent();
             txtNome.Text = "Avalie " + nomeFuncionaria + " (" + setorFuncionaria + ")";
             txtNome.Font = new Font("Microsoft Sans Serif", 25f);
-            nomeEntrevistada = nomeFuncionaria;
-            setorEntrevistada = setorFuncionaria;
+            nomeAvaliada = nomeFuncionaria;
+            setorAvaliada = setorFuncionaria;
+            setorAvaliadora = _setorAvaliadora;
+            listaRespostas = new List<ListaDeRespostas>();
         }
 
         private void Tecnica_Load(object sender, EventArgs e)
@@ -73,8 +77,21 @@ namespace Benaiah
                 }                
             }
 
-            //Tag = 3 é o último groupbox e o botão localiza-se abaixo.
-            foreach (var item in panel1.Controls.OfType<GroupBox>().Where(x => x.Tag.ToString().Equals("3")))
+            if (nomeAvaliada.Equals("TAMIRES DE ANGELO CANDIDO") && setorAvaliadora.Equals("Cozinha") ||
+                nomeAvaliada.Equals("MARIANA SINICIATO HENRIQUES") && setorAvaliadora.Equals("Enfermagem") ||
+                nomeAvaliada.Equals("JULIANA PINARELLI DE CURTIS") && setorAvaliadora.Equals("Serviços gerais"))
+            {                
+                formulario.CriaGroupBoxes(9, "10. Liderança (encoraja o trabalho em equipe, direciona e conduz projetos)");                
+            }
+
+            //if (nomeAvaliada.Equals("MARIANA SINICIATO HENRIQUES") && setorAvaliadora.Equals("Enfermagem"))
+            //{
+            //    formulario.CriaGroupBoxes(9, "10. Liderança (encoraja o trabalho em equipe, direciona e conduz projetos)");
+            //}
+
+            //Conta a quantidade de groupbox para posicionar o botão abaixo do último groupbox
+            int qtdeGroupbox = formulario.ContagemGrupbox();
+            foreach (var item in panel1.Controls.OfType<GroupBox>().Where(x => x.Tag.ToString().Equals((qtdeGroupbox-1).ToString())))
             {
                 BtnConfirmar.Location = new Point((panel1.Right - BtnConfirmar.Width) / 2, item.Bottom + 100);
             }
@@ -87,6 +104,40 @@ namespace Benaiah
                 {
                     rb.Checked = true;
                 }
+            }
+        }
+
+        private void BtnConfirmar_Click(object sender, EventArgs e)
+        {
+            DesenhaFormulario formulario = new DesenhaFormulario(panel1);
+            int qtdeGroupbox = formulario.ContagemGrupbox(); // Conta a quantidade de groupbox
+            int qtdeRadiobuttonChecked = 0; // conta a quantidade de radiobutton marcado
+
+            foreach (var item in panel1.Controls.OfType<GroupBox>())
+            {
+                foreach (var rb in item.Controls.OfType<RadioButton>().Where(x => x.Checked))
+                {
+                    qtdeRadiobuttonChecked++;
+                }
+            }
+
+            if (qtdeGroupbox == qtdeRadiobuttonChecked) // Se a quantidade de groupbox for igual a de radiobutton marcado, então todas as respostas foram marcadas
+            {
+                foreach (var box in panel1.Controls.OfType<GroupBox>())
+                {
+                    foreach (var rb in box.Controls.OfType<RadioButton>().Where(x => x.Checked))
+                    {
+                        //listaRespostas.Add(rb.Text);
+                        ListaDeRespostas lista = new ListaDeRespostas(nomeAvaliada, setorAvaliada, box.Text, rb.Text);
+                        listaRespostas.Add(lista);
+                    }
+                }
+
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Verifique a questão sem resposta.");
             }
         }
     }
