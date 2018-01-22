@@ -28,6 +28,15 @@ namespace Benaiah
             listaRespostas = new List<ListaDeRespostas>();
         }
 
+        /// <summary>
+        /// CriaFormulario(int, string, int)
+        /// int i: índice para posicionar o groupbox
+        /// string: A pergunta para a entrevistada
+        /// int 1 ou 2: Os textos do radiobutton podem ser de 2 tipo: A maior parte do tempo, A menor parte do tempo, Sempre, Nunca ou
+        ///             Excede expectativas, Atinge Expectativas, Precisa melhorar, Insatisfatório
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Tecnica_Load(object sender, EventArgs e)
         {
             panel1.Size = new Size(ClientRectangle.Width, Height * 90 / 100);
@@ -41,39 +50,39 @@ namespace Benaiah
             {
                 if (i == 0)
                 {
-                    formulario.CriaGroupBoxes(i, "1. Relaciona-se bem com os colegas de trabalho.");
+                    formulario.CriaGroupBoxes(i, "1. Relaciona-se bem com os colegas de trabalho.", 1);
                 }
                 else if (i == 1)
                 {
-                    formulario.CriaGroupBoxes(i, "2. Trata com cortesia e respeito os idosos que precisam do trabalho designado.");
+                    formulario.CriaGroupBoxes(i, "2. Trata com cortesia e respeito os idosos que precisam do trabalho designado.", 1);
                 }
                 else if (i == 2)
                 {
-                    formulario.CriaGroupBoxes(i, "3. Comunicação (ouve e encoraja outros expressar suas ideias e opiniões de modo objetivo).");
+                    formulario.CriaGroupBoxes(i, "3. Comunicação (ouve e encoraja outros expressar suas ideias e opiniões de modo objetivo).", 2);
                 }
                 else if (i == 3)
                 {
-                    formulario.CriaGroupBoxes(i, "4. Trabalho em equipe (contribui ativamente para o esforço da equipe, divide seu conhecimento e experiência com os outros).");
+                    formulario.CriaGroupBoxes(i, "4. Trabalho em equipe (contribui ativamente para o esforço da equipe, divide seu conhecimento e experiência com os outros).", 2);
                 }
                 else if (i == 4)
                 {
-                    formulario.CriaGroupBoxes(i, "5. Solução de problemas (toma decisões e faz julgamentos informais sobre como executar o trabalho; pensa estrategicamente, criativa nas propostas para solução de problemas).");
+                    formulario.CriaGroupBoxes(i, "5. Solução de problemas (toma decisões e faz julgamentos informais sobre como executar o trabalho; pensa estrategicamente, criativa nas propostas para solução de problemas).", 2);
                 }
                 else if (i == 5)
                 {
-                    formulario.CriaGroupBoxes(i, "6. Técnica/funcional (tem profundo conhecimento e capacidade em sua especialidade).");
+                    formulario.CriaGroupBoxes(i, "6. Técnica/funcional (tem profundo conhecimento e capacidade em sua especialidade).", 2);
                 }
                 else if (i == 6)
                 {
-                    formulario.CriaGroupBoxes(i, "7. Melhoria Contínua (promove inovações, busca aperfeiçoar-se).");
+                    formulario.CriaGroupBoxes(i, "7. Melhoria Contínua (promove inovações, busca aperfeiçoar-se).", 2);
                 }
                 else if (i == 7)
                 {
-                    formulario.CriaGroupBoxes(i, "8. Capacidade de organização (organização do tempo e distribuição de serviços).");
+                    formulario.CriaGroupBoxes(i, "8. Capacidade de organização (organização do tempo e distribuição de serviços).", 2);
                 }
                 else if (i == 8)
                 {
-                    formulario.CriaGroupBoxes(i, "9. Visão global do ambiente (entendimento do processo de atendimento dos idosos).");
+                    formulario.CriaGroupBoxes(i, "9. Visão global do ambiente (entendimento do processo de atendimento dos idosos).", 2);
                 }                
             }
 
@@ -81,7 +90,7 @@ namespace Benaiah
                 nomeAvaliada.Equals("MARIANA SINICIATO HENRIQUES") && setorAvaliadora.Equals("Enfermagem") ||
                 nomeAvaliada.Equals("JULIANA PINARELLI DE CURTIS") && setorAvaliadora.Equals("Serviços gerais"))
             {                
-                formulario.CriaGroupBoxes(9, "10. Liderança (encoraja o trabalho em equipe, direciona e conduz projetos)");                
+                formulario.CriaGroupBoxes(9, "10. Liderança (encoraja o trabalho em equipe, direciona e conduz projetos)", 2);                
             }
 
             //if (nomeAvaliada.Equals("MARIANA SINICIATO HENRIQUES") && setorAvaliadora.Equals("Enfermagem"))

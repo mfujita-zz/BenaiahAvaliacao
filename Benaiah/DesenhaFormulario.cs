@@ -17,7 +17,7 @@ namespace Benaiah
             panel1 = painel;
         }
 
-        public void CriaGroupBoxes(int num, string texto)
+        public void CriaGroupBoxes(int num, string texto, int tipo)
         {
             int distanciaVertical = 15;
 
@@ -42,14 +42,14 @@ namespace Benaiah
             gb.Controls.Add(rb2);
             gb.Controls.Add(rb3);
             gb.Controls.Add(rb4);
-            if (num <= 12)
+            if (tipo.Equals(1))
             { 
                 rb1.Text = "A maior parte do tempo";
                 rb2.Text = "A menor parte do tempo";
                 rb3.Text = "Sempre";
                 rb4.Text = "Nunca";
             }
-            else
+            else if (tipo.Equals(2))
             {
                 rb1.Text = "Excede expectativas";
                 rb2.Text = "Atinge Expectativas";

@@ -28,6 +28,15 @@ namespace Benaiah
             listaRespostas = new List<ListaDeRespostas>();
         }
 
+        /// <summary>
+        /// CriaFormulario(int, string, int)
+        /// int i: índice para posicionar o groupbox
+        /// string: A pergunta para a entrevistada
+        /// int 1 ou 2: Os textos do radiobutton podem ser de 2 tipo: A maior parte do tempo, A menor parte do tempo, Sempre, Nunca ou
+        ///             Excede expectativas, Atinge Expectativas, Precisa melhorar, Insatisfatório
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TecnicaMesmoSetor_Load(object sender, EventArgs e)
         {
             //int indiceUltimoGroupbox = 20;
@@ -42,95 +51,95 @@ namespace Benaiah
             {
                 if (i == 0)
                 {
-                    formulario.CriaGroupBoxes(i, "1. Permanece regularmente no local de trabalho para execução de suas atribuições.");
+                    formulario.CriaGroupBoxes(i, "1. Permanece regularmente no local de trabalho para execução de suas atribuições.", 1);
                 }
                 else if (i == 1)
                 {
-                    formulario.CriaGroupBoxes(i, "2. Cumpre o horário estabelecido.");
+                    formulario.CriaGroupBoxes(i, "2. Cumpre o horário estabelecido.", 1);
                 }
                 else if (i == 2)
                 {
-                    formulario.CriaGroupBoxes(i, "3. Informa antecipadamente imprevistos que impeçam o seu comparecimento ou cumprimento do horário.");
+                    formulario.CriaGroupBoxes(i, "3. Informa antecipadamente imprevistos que impeçam o seu comparecimento ou cumprimento do horário.", 1);
                 }
                 else if (i == 3)
                 {
-                    formulario.CriaGroupBoxes(i, "4. Relaciona-se bem com os colegas de trabalho.");
+                    formulario.CriaGroupBoxes(i, "4. Relaciona-se bem com os colegas de trabalho.", 1);
                 }
                 else if (i == 4)
                 {
-                    formulario.CriaGroupBoxes(i, "5. Trata com cortesia e respeito os idosos que precisam do trabalho designado.");
+                    formulario.CriaGroupBoxes(i, "5. Trata com cortesia e respeito os idosos que precisam do trabalho designado.", 1);
                 }
                 else if (i == 5)
                 {
-                    formulario.CriaGroupBoxes(i, "6. Age de acordo com as normas legais e regulamentares.");
+                    formulario.CriaGroupBoxes(i, "6. Age de acordo com as normas legais e regulamentares.", 1);
                 }
                 else if (i == 6)
                 {
-                    formulario.CriaGroupBoxes(i, "7. Organiza suas atividades diárias para realizá-las no prazo estabelecido.");
+                    formulario.CriaGroupBoxes(i, "7. Organiza suas atividades diárias para realizá-las no prazo estabelecido.", 1);
                 }
                 else if (i == 7)
                 {
-                    formulario.CriaGroupBoxes(i, "8. Realiza com qualidade as atividades que lhe são designadas.");
+                    formulario.CriaGroupBoxes(i, "8. Realiza com qualidade as atividades que lhe são designadas.", 1);
                 }
                 else if (i == 8)
                 {
-                    formulario.CriaGroupBoxes(i, "9. Apresenta sugestões para o aperfeiçoamento do serviço.");
+                    formulario.CriaGroupBoxes(i, "9. Apresenta sugestões para o aperfeiçoamento do serviço.", 1);
                 }
                 else if (i == 9)
                 {
-                    formulario.CriaGroupBoxes(i, "10. Colabora com os colegas de trabalho, visando manter a coesão e a harmonia na equipe.");
+                    formulario.CriaGroupBoxes(i, "10. Colabora com os colegas de trabalho, visando manter a coesão e a harmonia na equipe.", 1);
                 }
                 else if (i == 10)
                 {
-                    formulario.CriaGroupBoxes(i, "11.Busca novos conhecimentos que contribuam para o desenvolvimento dos trabalhos.");
+                    formulario.CriaGroupBoxes(i, "11.Busca novos conhecimentos que contribuam para o desenvolvimento dos trabalhos.", 1);
                 }
                 else if (i == 11)
                 {
-                    formulario.CriaGroupBoxes(i, "12. Habilidade para perceber, interpretar e discernir aspectos importantes no desenvolvimento do trabalho.");
+                    formulario.CriaGroupBoxes(i, "12. Habilidade para perceber, interpretar e discernir aspectos importantes no desenvolvimento do trabalho.", 1);
                 }
                 else if (i == 12)
                 {
-                    formulario.CriaGroupBoxes(i, "13. Capacidade de lidar com situações fora da rotina e a habilidade para criar e desenvolver novas ideias, percebendo, interpretando e discernindo aspectos importantes no desenvolvimento do trabalho.");
+                    formulario.CriaGroupBoxes(i, "13. Capacidade de lidar com situações fora da rotina e a habilidade para criar e desenvolver novas ideias, percebendo, interpretando e discernindo aspectos importantes no desenvolvimento do trabalho.", 1);
                 }
                 else if (i == 13)
                 {
-                    formulario.CriaGroupBoxes(i, "14. Comunicação (ouve e encoraja outros expressar suas ideias e opiniões de modo objetivo).");
+                    formulario.CriaGroupBoxes(i, "14. Comunicação (ouve e encoraja outros expressar suas ideias e opiniões de modo objetivo).", 2);
                 }
                 else if (i == 14)
                 {
-                    formulario.CriaGroupBoxes(i, "15. Trabalho em equipe (contribui ativamente para o esforço da equipe, divide seu conhecimento e experiência com os outros).");
+                    formulario.CriaGroupBoxes(i, "15. Trabalho em equipe (contribui ativamente para o esforço da equipe, divide seu conhecimento e experiência com os outros).", 2);
                 }
                 else if (i == 15)
                 {
-                    formulario.CriaGroupBoxes(i, "16. Solução de problemas (toma decisões e faz julgamentos informais sobre como executar o trabalho; pensa estrategicamente, criativa nas propostas para solução de problemas).");
+                    formulario.CriaGroupBoxes(i, "16. Solução de problemas (toma decisões e faz julgamentos informais sobre como executar o trabalho; pensa estrategicamente, criativa nas propostas para solução de problemas).", 2);
                 }
                 else if (i == 16)
                 {
-                    formulario.CriaGroupBoxes(i, "17. Técnica/funcional (tem profundo conhecimento e capacidade em sua especialidade).");
+                    formulario.CriaGroupBoxes(i, "17. Técnica/funcional (tem profundo conhecimento e capacidade em sua especialidade).", 2);
                 }
                 else if (i == 17)
                 {
-                    formulario.CriaGroupBoxes(i, "18. Melhoria Contínua (promove inovações, busca aperfeiçoar-se).");
+                    formulario.CriaGroupBoxes(i, "18. Melhoria Contínua (promove inovações, busca aperfeiçoar-se).", 2);
                 }
                 else if (i == 18)
                 {
-                    formulario.CriaGroupBoxes(i, "19. Capacidade de organização (organização do tempo e distribuição de serviços).");
+                    formulario.CriaGroupBoxes(i, "19. Capacidade de organização (organização do tempo e distribuição de serviços).", 2);
                 }
                 else if (i == 19)
                 {
-                    formulario.CriaGroupBoxes(i, "20. Visão global do ambiente (entendimento do processo de atendimento dos idosos).");
+                    formulario.CriaGroupBoxes(i, "20. Visão global do ambiente (entendimento do processo de atendimento dos idosos).", 2);
                 }
             }
 
             if (nomeAvaliada.Equals("JULIANA PINARELLI DE CURTIS"))
             {
-                formulario.CriaGroupBoxes(20, "21. Liderança (encoraja o trabalho em equipe, direciona e conduz projetos).");
+                formulario.CriaGroupBoxes(20, "21. Liderança (encoraja o trabalho em equipe, direciona e conduz projetos).", 2);
             }
 
             int indiceUltimoGroupbox = formulario.ContagemGrupbox(); // Para posicionar abaixo do último groupbox o botão CONFIRMAR precisa contar a quantidade de grupbox
 
             //Procura o último groupbox para posicionar o botão CONFIRMAR.
-            foreach (var item in panel1.Controls.OfType<GroupBox>().Where(x => x.Tag.ToString().Equals(indiceUltimoGroupbox.ToString())))
+            foreach (var item in panel1.Controls.OfType<GroupBox>().Where(x => x.Tag.ToString().Equals((indiceUltimoGroupbox-1).ToString())))
             {
                 BtnConfirmar.Location = new Point((panel1.Right - BtnConfirmar.Width) / 2, item.Bottom + 100);
             }
