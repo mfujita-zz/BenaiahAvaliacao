@@ -88,5 +88,41 @@ namespace Benaiah
 
             return qtdeGroupbox;
         }
+
+        //Conta os groupbox do formulário e posiciona o botão abaixo do último groupbox
+        public void PosicionaBotao(Button BtnConfirmar)
+        {
+            //foreach (var item in panel1.Controls.OfType<GroupBox>().Where(x => x.Tag.ToString().Equals(ContagemGrupbox().ToString())))
+            //{
+            //    BtnConfirmar.Location = new Point((panel1.Right - BtnConfirmar.Width) / 2, item.Bottom + 100);
+            //}
+            BtnConfirmar.Location = new Point((panel1.Right - BtnConfirmar.Width) / 2, ContagemGrupbox() * 260 + 100);
+            BtnConfirmar.BackColor = Color.LightGoldenrodYellow;
+            BtnConfirmar.Text = "Confirmar";
+        }
+
+        public bool ProcessaResposta()
+        {
+            DesenhaFormulario formulario = new DesenhaFormulario(panel1);
+            int qtdeGroupbox = formulario.ContagemGrupbox(); // Conta a quantidade de groupbox
+            int qtdeRadiobuttonChecked = 0; // conta a quantidade de radiobutton marcado
+
+            foreach (var item in panel1.Controls.OfType<GroupBox>())
+            {
+                foreach (var rb in item.Controls.OfType<RadioButton>().Where(x => x.Checked))
+                {
+                    qtdeRadiobuttonChecked++;
+                }
+            }
+
+            if (qtdeGroupbox == qtdeRadiobuttonChecked) // Se a quantidade de groupbox for igual a de radiobutton marcado, então todas as respostas foram marcadas
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

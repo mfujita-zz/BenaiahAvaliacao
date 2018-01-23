@@ -111,6 +111,7 @@
     <Compile Include="TecnicaMesmoSetor.Designer.cs">
       <DependentUpon>TecnicaMesmoSetor.cs</DependentUpon>
     </Compile>
+    <Compile Include="TextoPerguntas.cs" />
     <EmbeddedResource Include="SetorDiferente.resx">
       <DependentUpon>SetorDiferente.cs</DependentUpon>
     </EmbeddedResource>
