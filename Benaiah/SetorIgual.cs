@@ -61,7 +61,10 @@ namespace Benaiah
             {
                 foreach (var rb in box.Controls.OfType<RadioButton>())
                 {
-                    rb.Checked = true;
+                    if (rb.Text.Equals("A maior parte do tempo") || rb.Text.Equals("Excede expectativas"))
+                    {
+                        rb.Checked = true;
+                    }
                 }
             }
         }

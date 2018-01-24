@@ -39,7 +39,7 @@ namespace Benaiah
             return lista;
         }
 
-        public List<string> Tipo3() // Perguntas 15, 16, 17, 18, 19, 20 e 21
+        public List<string> Tipo3() // Perguntas 15 a 21
         {
             List<string> lista = new List<string>();
             lista.Add("Comunicação (ouve e encoraja outros expressar suas ideias e opiniões de modo objetivo).");

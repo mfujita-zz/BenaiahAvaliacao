@@ -66,6 +66,22 @@ namespace Benaiah
                 }
             }
 
+            else if (setorAvaliadora.Equals("Cozinha") && setorAvaliada.Equals("Técnica") ||
+                setorAvaliadora.Equals("Enfermagem") && setorAvaliada.Equals("Técnica") ||
+                setorAvaliadora.Equals("Serviços gerais") && setorAvaliada.Equals("Técnica"))
+            {
+                foreach (var item in perguntas.Tipo4())
+                {
+                    formulario.CriaGroupBoxes(numeroPergunta, numeroPergunta + 1 + ". " + item, 1);
+                    numeroPergunta++;
+                }
+                foreach (var item in perguntas.Tipo5())
+                {
+                    formulario.CriaGroupBoxes(numeroPergunta, numeroPergunta + 1 + ". " + item, 2);
+                    numeroPergunta++;
+                }
+            }
+
             else if (setorAvaliadora.Equals("Cozinha") && setorAvaliada.Equals("Outros") ||
                 setorAvaliadora.Equals("Enfermagem") && setorAvaliada.Equals("Outros") ||
                 setorAvaliadora.Equals("Serviços gerais") && setorAvaliada.Equals("Outros"))
