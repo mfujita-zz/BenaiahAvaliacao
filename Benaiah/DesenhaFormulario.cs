@@ -24,12 +24,13 @@ namespace Benaiah
             GroupBox gb = new GroupBox();
             panel1.Controls.Add(gb);
             gb.Tag = num;
-            gb.Size = new Size(panel1.ClientRectangle.Width * 90 / 100, 250);
+            // Alterar o posicionamento do BtnConfirmar.Location se mexer no segundo parâmetro do gb.Size
+            gb.Size = new Size(panel1.ClientRectangle.Width * 90 / 100, 160); // Se mexer na posição do groupbox, altere o segundo parâmetro do gb.Size
             if (num == 0)
                 gb.Location = new Point(panel1.Left, 0);
             else
             {
-                gb.Location = new Point(panel1.Left, 260 * num);
+                gb.Location = new Point(panel1.Left, 170 * num); //260 * num);
             }
             gb.BackColor = Color.LightGoldenrodYellow;
             gb.Text = texto;
@@ -67,14 +68,15 @@ namespace Benaiah
             rb1.Location = new Point(gb.Left + distanciaVertical, 40);
             rb2.Location = new Point(gb.Left + distanciaVertical, 60);
             rb3.Location = new Point(gb.Left + distanciaVertical, 80);
-            rb4.Location = new Point(gb.Left + distanciaVertical, 100);
+            rb4.Location = new Point(gb.Left + distanciaVertical, 100);            
 
             TextBox txtObs = new TextBox();
             gb.Controls.Add(txtObs);
             txtObs.Tag = num;
             txtObs.Multiline = true;
-            txtObs.Location = new Point(gb.Left + distanciaVertical, 150);
-            txtObs.Size = new Size(gb.Width * 90 / 100, 60);
+            //txtObs.Location = new Point(gb.Left + distanciaVertical, 150);
+            txtObs.Location = new Point(rb1.Right + 100, rb1.Top);
+            txtObs.Size = new Size(gb.Width * 60 / 100, 60);
         }
 
         public int ContagemGrupbox()
@@ -92,11 +94,7 @@ namespace Benaiah
         //Conta os groupbox do formulário e posiciona o botão abaixo do último groupbox
         public void PosicionaBotao(Button BtnConfirmar)
         {
-            //foreach (var item in panel1.Controls.OfType<GroupBox>().Where(x => x.Tag.ToString().Equals(ContagemGrupbox().ToString())))
-            //{
-            //    BtnConfirmar.Location = new Point((panel1.Right - BtnConfirmar.Width) / 2, item.Bottom + 100);
-            //}
-            BtnConfirmar.Location = new Point((panel1.Right - BtnConfirmar.Width) / 2, ContagemGrupbox() * 260 + 100);
+            BtnConfirmar.Location = new Point((panel1.Right - BtnConfirmar.Width) / 2, ContagemGrupbox() * 170 + 100);
             BtnConfirmar.BackColor = Color.LightGoldenrodYellow;
             BtnConfirmar.Text = "Confirmar";
         }

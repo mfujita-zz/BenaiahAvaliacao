@@ -173,26 +173,6 @@ namespace Benaiah
         {
             Hide();
 
-            //foreach (var item in listaFuncionarios)
-            //{
-            //    if (!item.Funcionario.Equals(nome))
-            //    {
-            //        var categoria = listaFuncionarios.Where(p => p.Funcionario.Equals(nome)).Select(x => x.Setor).ToList();
-            //        if (categoria[0].ToString().Equals(item.Setor))
-            //        {
-            //            SetorIgual sIgual = new SetorIgual(item.Funcionario, item.Setor);
-            //            sIgual.ShowDialog();
-            //            todasRespostas.AddRange(SetorIgual.listaRespostas);
-            //        }
-            //        else
-            //        {
-            //            SetorDiferente sDiferente = new SetorDiferente(item.Funcionario, item.Setor);
-            //            sDiferente.ShowDialog();
-            //            todasRespostas.AddRange(SetorDiferente.listaRespostas);
-            //        }
-            //    }
-            //}
-
             SqlConnection conexao = new SqlConnection("Server=ULTRABOOK\\SQLEXPRESS;Database=Benaiah;Trusted_Connection=True;");
             conexao.Open();
             SqlCommand comando = new SqlCommand("select nome, setor from funcionaria", conexao);
@@ -202,19 +182,6 @@ namespace Benaiah
                 {
                     if (reader["nome"].ToString().Trim() != nomeAvaliadora) 
                     {
-                        //if (reader["setor"] == reader["setor"])
-                        //{
-                        //    SetorIgual sIgual = new SetorIgual(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim());
-                        //    sIgual.ShowDialog();
-                        //    todasRespostas.AddRange(SetorIgual.listaRespostas);
-                        //}
-                        //else
-                        //{
-                        //    SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim());
-                        //    sDiferente.ShowDialog();
-                        //    todasRespostas.AddRange(SetorDiferente.listaRespostas);
-                        //}
-
                         //Cozinha
                         if (setorAvaliadora.Equals("Cozinha") && reader["setor"].ToString().Trim().Equals("Cozinha"))
                         {                               
@@ -379,11 +346,9 @@ namespace Benaiah
             }
 
             ConcentraRespostas c = new ConcentraRespostas();
-            c.GeraRelatorio(todasRespostas);
+            c.GeraRelatorio(todasRespostas, nomeAvaliadora, setorAvaliadora);
 
-            Close();
-
-            
+            Close();            
         }
     }
 }

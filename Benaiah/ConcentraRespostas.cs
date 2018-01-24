@@ -9,13 +9,15 @@ namespace Benaiah
 {
     class ConcentraRespostas
     {
-        public void GeraRelatorio(List<ListaDeRespostas> todasRespostas)
+        public void GeraRelatorio(List<ListaDeRespostas> todasRespostas, string nome, string setor)
         {
             FileStream fs = new FileStream("relatorio.html", FileMode.Create);
             StreamWriter sw = new StreamWriter(fs);
             sw.WriteLine("<html>");
             sw.WriteLine("<body>");
             sw.WriteLine("<meta charset=utf8>");
+            sw.WriteLine("<h4>Avaliação feita por: " + nome + "</h4>");
+            sw.WriteLine("<h4>Setor: " + setor + "</h4>");
             sw.WriteLine("<table border=1>");
             foreach (var item in todasRespostas)
             {
