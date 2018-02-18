@@ -13,24 +13,30 @@ namespace Benaiah
 {
     public partial class SetorDiferente : Form
     {
+        private string nomeDaAvaliadora;
+        private string setorDaAvaliadora;
         private string nomeAvaliada;
         private string setorAvaliada;
-        private string setorAvaliadora;
         public static List<ListaDeRespostas> listaRespostas { get; set; }
 
-        public SetorDiferente(string nomeFuncionaria, string setorFuncionaria, string _setorAvaliadora)
+        // nomeDaAvaliadora: nome de quem está respondendo o formulário. Tem a palavra "Da".
+        // setorDaAvaliadora: setor da funcionária que está respondendo o formulário. Tem a palavra "Da".
+        // nomeAvaliada: nome de quem está recebendo o julgamento das colegas de trabalho. Não tem a palavra "Da".
+        // setorAvaliada: setor ao qual pertence quem está recebendo o julgamento das colegas de trabalho. Não tem a palavra "Da".
+        public SetorDiferente(string _nomeAvaliada, string _setorAvaliada, string nomeRespondendoFormulario, string _setorAvaliadora)
         {
             InitializeComponent();
-            txtNome.Text = "Avalie " + nomeFuncionaria + " (" + setorFuncionaria + ")";
+            txtNome.Text = "Avalie " + _nomeAvaliada + " (" + _setorAvaliada + ")";
             txtNome.Font = new Font("Microsoft Sans Serif", 25f);
-            nomeAvaliada = nomeFuncionaria;
-            setorAvaliada = setorFuncionaria;
-            setorAvaliadora = _setorAvaliadora;
+            nomeDaAvaliadora = nomeRespondendoFormulario;
+            setorDaAvaliadora = _setorAvaliadora;
+            nomeAvaliada = _nomeAvaliada;
+            setorAvaliada = _setorAvaliada;
             listaRespostas = new List<ListaDeRespostas>();
         }
 
         /// <summary>
-        /// CriaFormulario(int, string, int)
+        /// CriaGroupBoxes(int, string, int)
         /// int i: índice para posicionar o groupbox
         /// string: A pergunta para a entrevistada
         /// int 1 ou 2: Os textos do radiobutton podem ser de 2 tipo: A maior parte do tempo, A menor parte do tempo, Sempre, Nunca ou
@@ -49,15 +55,15 @@ namespace Benaiah
             TextoPerguntas perguntas = new TextoPerguntas();
             int numeroPergunta = 0;
 
-            if (setorAvaliadora.Equals("Cozinha") && setorAvaliada.Equals("Enfermagem") ||
-                setorAvaliadora.Equals("Cozinha") && setorAvaliada.Equals("Serviços gerais") ||
-                setorAvaliadora.Equals("Enfermagem") && setorAvaliada.Equals("Cozinha") ||
-                setorAvaliadora.Equals("Enfermagem") && setorAvaliada.Equals("Serviços gerais") ||
-                setorAvaliadora.Equals("Serviços gerais") && setorAvaliada.Equals("Cozinha") ||
-                setorAvaliadora.Equals("Serviços gerais") && setorAvaliada.Equals("Enfermagem") ||
-                setorAvaliadora.Equals("Outros") && setorAvaliada.Equals("Cozinha") ||
-                setorAvaliadora.Equals("Outros") && setorAvaliada.Equals("Enfermagem") ||
-                setorAvaliadora.Equals("Outros") && setorAvaliada.Equals("Serviços gerais"))
+            if (setorDaAvaliadora.Equals("Cozinha") && setorAvaliada.Equals("Enfermagem") ||
+                setorDaAvaliadora.Equals("Cozinha") && setorAvaliada.Equals("Serviços gerais") ||
+                setorDaAvaliadora.Equals("Enfermagem") && setorAvaliada.Equals("Cozinha") ||
+                setorDaAvaliadora.Equals("Enfermagem") && setorAvaliada.Equals("Serviços gerais") ||
+                setorDaAvaliadora.Equals("Serviços gerais") && setorAvaliada.Equals("Cozinha") ||
+                setorDaAvaliadora.Equals("Serviços gerais") && setorAvaliada.Equals("Enfermagem") ||
+                setorDaAvaliadora.Equals("Outros") && setorAvaliada.Equals("Cozinha") ||
+                setorDaAvaliadora.Equals("Outros") && setorAvaliada.Equals("Enfermagem") ||
+                setorDaAvaliadora.Equals("Outros") && setorAvaliada.Equals("Serviços gerais"))
             {
                 foreach (var item in perguntas.Tipo2())
                 {
@@ -66,9 +72,9 @@ namespace Benaiah
                 }
             }
 
-            else if (setorAvaliadora.Equals("Cozinha") && setorAvaliada.Equals("Técnica") ||
-                setorAvaliadora.Equals("Enfermagem") && setorAvaliada.Equals("Técnica") ||
-                setorAvaliadora.Equals("Serviços gerais") && setorAvaliada.Equals("Técnica"))
+            else if (setorDaAvaliadora.Equals("Cozinha") && setorAvaliada.Equals("Técnica") ||
+                setorDaAvaliadora.Equals("Enfermagem") && setorAvaliada.Equals("Técnica") ||
+                setorDaAvaliadora.Equals("Serviços gerais") && setorAvaliada.Equals("Técnica"))
             {
                 foreach (var item in perguntas.Tipo4())
                 {
@@ -82,9 +88,9 @@ namespace Benaiah
                 }
             }
 
-            else if (setorAvaliadora.Equals("Cozinha") && setorAvaliada.Equals("Outros") ||
-                setorAvaliadora.Equals("Enfermagem") && setorAvaliada.Equals("Outros") ||
-                setorAvaliadora.Equals("Serviços gerais") && setorAvaliada.Equals("Outros"))
+            else if (setorDaAvaliadora.Equals("Cozinha") && setorAvaliada.Equals("Outros") ||
+                setorDaAvaliadora.Equals("Enfermagem") && setorAvaliada.Equals("Outros") ||
+                setorDaAvaliadora.Equals("Serviços gerais") && setorAvaliada.Equals("Outros"))
             {
                 foreach (var item in perguntas.Tipo4())
                 {
@@ -98,7 +104,18 @@ namespace Benaiah
                 }
             }
 
-            else if (setorAvaliadora.Equals("Técnica") && setorAvaliada.Equals("Outros"))
+            else if (setorDaAvaliadora.Equals("Técnica") && setorAvaliada.Equals("Cozinha") ||
+                setorDaAvaliadora.Equals("Técnica") && setorAvaliada.Equals("Enfermagem") ||
+                setorDaAvaliadora.Equals("Técnica") && setorAvaliada.Equals("Serviços gerais"))
+            {
+                foreach (var item in perguntas.Tipo2())
+                {
+                    formulario.CriaGroupBoxes(numeroPergunta, numeroPergunta + 1 + ". " + item, 1);
+                    numeroPergunta++;
+                }
+            }
+
+            else if (setorDaAvaliadora.Equals("Técnica") && setorAvaliada.Equals("Outros"))
             {
                 foreach (var item in perguntas.Tipo4())
                 {
@@ -112,7 +129,7 @@ namespace Benaiah
                 }
             }
 
-            else if (setorAvaliadora.Equals("Outros") && setorAvaliada.Equals("Técnica"))
+            else if (setorDaAvaliadora.Equals("Outros") && setorAvaliada.Equals("Técnica"))
             {
                 foreach (var item in perguntas.Tipo4())
                 {
@@ -140,7 +157,7 @@ namespace Benaiah
                 foreach (var rb in box.Controls.OfType<RadioButton>())
                 {
                     if (rb.Text.Equals("A maior parte do tempo") || rb.Text.Equals("Excede expectativas"))
-                    { 
+                    {
                         rb.Checked = true;
                     }
                 }
@@ -156,7 +173,7 @@ namespace Benaiah
                 {
                     foreach (var rb in box.Controls.OfType<RadioButton>().Where(x => x.Checked))
                     {
-                        ListaDeRespostas lista = new ListaDeRespostas(nomeAvaliada, setorAvaliada, box.Text, rb.Text);
+                        ListaDeRespostas lista = new ListaDeRespostas(nomeDaAvaliadora, setorDaAvaliadora, nomeAvaliada, setorAvaliada, box.Text, rb.Text);
                         listaRespostas.Add(lista);
                     }
                 }

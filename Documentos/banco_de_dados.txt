@@ -28,29 +28,45 @@ insert into Funcionaria (ID_func, setor, nome, senha) values(26, 'Técnica', 'RO
 insert into Funcionaria (ID_func, setor, nome, senha) values(27, 'Técnica', 'TAMIRES DE ANGELO CANDIDO', '27')
 insert into Funcionaria (ID_func, setor, nome, senha) values(28, 'Técnica', 'VIVIANE LEMBO', '28')                  
 insert into Funcionaria (ID_func, setor, nome, senha) values(29, 'Outros',  'FERNANDA DE OLIVEIRA VIEIRA', '29')                  
-insert into Funcionaria (ID_func, setor, nome, senha) values(30, 'Outros',  'VANILDE MARTINELI DE OLIVEIRA CAMARGO', '30')                  
+insert into Funcionaria (ID_func, setor, nome, senha) values(30, 'Outros',  'VANILDE MARTINELI DE OLIVEIRA CAMARGO', '30')       
+
+insert into Funcionaria (ID_func, setor, nome, senha) values(0, 'Cozinha', 'ALDENIRA PEREIRA MORAES', '0')
+insert into Funcionaria (ID_func, setor, nome, senha) values(1, 'Cozinha', 'ANA LUCIA FERREIRA DOS SANTOS', '1')
+insert into Funcionaria (ID_func, setor, nome, senha) values(5, 'Enfermagem', 'CAROLINE MARCILENE BARREIRA DE PIERI', '5')
+insert into Funcionaria (ID_func, setor, nome, senha) values(6, 'Enfermagem', 'DAIANY RENATA THOMAZINI', '6')
+insert into Funcionaria (ID_func, setor, nome, senha) values(16, 'Serviços gerais', 'FRANCISCA MARIA DE JESUS SANTOS', '16')
+insert into Funcionaria (ID_func, setor, nome, senha) values(17, 'Serviços gerais', 'IVETE FERREIRA DOS SANTOS', '17')
+insert into Funcionaria (ID_func, setor, nome, senha) values(23, 'Técnica', 'JULIANA PINARELLI DE CURTIS', '23')                  
+insert into Funcionaria (ID_func, setor, nome, senha) values(24, 'Técnica', 'MARCELA CRISTINA BARBERA', '24')                  
+insert into Funcionaria (ID_func, setor, nome, senha) values(25, 'Técnica', 'MARIANA SINICIATO HENRIQUES', '25')
+insert into Funcionaria (ID_func, setor, nome, senha) values(27, 'Técnica', 'TAMIRES DE ANGELO CANDIDO', '27')                  
+insert into Funcionaria (ID_func, setor, nome, senha) values(29, 'Outros',  'FERNANDA DE OLIVEIRA VIEIRA', '29')                  
+insert into Funcionaria (ID_func, setor, nome, senha) values(30, 'Outros',  'VANILDE MARTINELI DE OLIVEIRA CAMARGO', '30')   
 
 
 create table Respostas (
 	ID int NOT NULL,
-	IDfunc int NOT NULL,
-	q1 varchar(MAX),
-	q2 varchar(MAX),
-	q3 varchar(MAX),
-	q4 varchar(MAX),
-	q5 varchar(MAX),
-	q6 varchar(MAX),
-	q7 varchar(MAX),
-	q8 varchar(MAX),
-	q9 varchar(MAX),
-	q10 varchar(MAX),
-	q11 varchar(MAX),
-	q12 varchar(MAX),
-	q13 varchar(MAX),
+	nomeDaAvaliadora varchar(100),
+	setorDaAvaliadora varchar(50),
+	nomeAvaliada varchar(100),
+	setorAvaliada varchar(50),
+	pergunta varchar(MAX),
+	resposta varchar(MAX),
 	DataHoraResposta Datetime,
 );
 
 insert into respostas (ID, IDFunc, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, DataHoraResposta) values (1, 1, 'r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10', 'r11', 'r12', 'r13', GETDATE())
+
+create table Respostas (
+	ID int NOT NULL,
+	nome varchar(100),
+	setor varchar(50),
+	pergunta varchar(200),
+	resposta varchar(200),
+	DataHoraResposta Datetime
+)
+
+insert into respostas (ID, nome, setor, pergunta, resposta) values (1, 'nome', 'setor', 'pergunta', 'resposta');
 
 update funcionaria set setor = 'Secretaria' where id_func = '20'
 update funcionaria set setor = 'faxina', senha = 'teste' where id_func = '20' 

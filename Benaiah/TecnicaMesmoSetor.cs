@@ -12,19 +12,21 @@ namespace Benaiah
 {
     public partial class TecnicaMesmoSetor : Form
     {
+        private string nomeDaAvaliadora;
+        private string setorDaAvaliadora;
         private string nomeAvaliada;
         private string setorAvaliada;
-        private string setorAvaliadora;
         public static List<ListaDeRespostas> listaRespostas { get; set; }
 
-        public TecnicaMesmoSetor(string nomeFuncionaria, string setorFuncionaria, string _setorAvaliadora)
+        public TecnicaMesmoSetor(string _nomeAvaliada, string _setorAvaliada, string nomeRespondendoFormulario, string _setorAvaliadora)
         {
             InitializeComponent();
-            txtNome.Text = "Avalie " + nomeFuncionaria + " (" + setorFuncionaria + ")";
+            txtNome.Text = "Avalie " + _nomeAvaliada + " (" + _setorAvaliada + ")";
             txtNome.Font = new Font("Microsoft Sans Serif", 25f);
-            nomeAvaliada = nomeFuncionaria;
-            setorAvaliada = setorFuncionaria;
-            setorAvaliadora = _setorAvaliadora;
+            nomeDaAvaliadora = nomeRespondendoFormulario;
+            setorDaAvaliadora = _setorAvaliadora;
+            nomeAvaliada = _nomeAvaliada;
+            setorAvaliada = _setorAvaliada;
             listaRespostas = new List<ListaDeRespostas>();
         }
 
@@ -89,7 +91,8 @@ namespace Benaiah
                 {
                     foreach (var rb in box.Controls.OfType<RadioButton>().Where(x => x.Checked))
                     {
-                        ListaDeRespostas lista = new ListaDeRespostas(nomeAvaliada, setorAvaliada, box.Text, rb.Text);
+                        //ListaDeRespostas lista = new ListaDeRespostas(nomeAvaliada, setorAvaliada, box.Text, rb.Text);
+                        ListaDeRespostas lista = new ListaDeRespostas(nomeDaAvaliadora, setorDaAvaliadora, nomeAvaliada, setorAvaliada, box.Text, rb.Text);
                         listaRespostas.Add(lista);
                     }
                 }

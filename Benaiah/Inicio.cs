@@ -56,28 +56,27 @@ namespace Benaiah
 
             //listaFuncionarios.Add(new Funcionarios("ALDENIRA PEREIRA MORAES", "Cozinha", "0"));
             //listaFuncionarios.Add(new Funcionarios("ANA LUCIA FERREIRA DOS SANTOS", "Cozinha", "1"));
-            ////listaFuncionarios.Add(new Funcionarios("BEATRIZ ADALBERTO DOS SANTOS", "Cozinha", "2"));
-            ////listaFuncionarios.Add(new Funcionarios("MARIA OZENI FERREIRA LEITE", "Cozinha", "3"));
-            ////listaFuncionarios.Add(new Funcionarios("VALERIA CRISTINA DE AGUIAR", "Cozinha", "4"));
+            //listaFuncionarios.Add(new Funcionarios("BEATRIZ ADALBERTO DOS SANTOS", "Cozinha", "2"));
+            //listaFuncionarios.Add(new Funcionarios("MARIA OZENI FERREIRA LEITE", "Cozinha", "3"));
+            //listaFuncionarios.Add(new Funcionarios("VALERIA CRISTINA DE AGUIAR", "Cozinha", "4"));
             //listaFuncionarios.Add(new Funcionarios("CAROLINE MARCILENE BARREIRA DE PIERI", "Enfermagem", "5"));
             //listaFuncionarios.Add(new Funcionarios("DAIANY RENATA THOMAZINI", "Enfermagem", "6"));
-            ////listaFuncionarios.Add(new Funcionarios("DANIELY CAMARGO NUNES", "Enfermagem", "7"));
-            ////listaFuncionarios.Add(new Funcionarios("DEBORAH DE ASSIS SILVA", "Enfermagem", "8"));
-            ////listaFuncionarios.Add(new Funcionarios("JULIANA MARIA DA SILVA DOMINGUES", "Enfermagem", "9"));
-            ////listaFuncionarios.Add(new Funcionarios("LUCIANA APARECIDA NOGUEIRA DE CAMPOS", "Enfermagem", "10"));
-            ////listaFuncionarios.Add(new Funcionarios("MARILEIDE LEANDRA CURVO", "Enfermagem", "11"));
-            ////listaFuncionarios.Add(new Funcionarios("MARINA PEREIRA DA SILVA", "Enfermagem", "12"));
-            ////listaFuncionarios.Add(new Funcionarios("MAYARA RIBEIRO DA CRUZ", "Enfermagem", "13"));
-            ////listaFuncionarios.Add(new Funcionarios("MIRELLE SAMIRA VAZ", "Enfermagem", "14"));
-            ////listaFuncionarios.Add(new Funcionarios("ODETE MEDEIROS DE SOUZA", "Enfermagem", "15"));
+            //listaFuncionarios.Add(new Funcionarios("DANIELY CAMARGO NUNES", "Enfermagem", "7"));
+            //listaFuncionarios.Add(new Funcionarios("DEBORAH DE ASSIS SILVA", "Enfermagem", "8"));
+            //listaFuncionarios.Add(new Funcionarios("JULIANA MARIA DA SILVA DOMINGUES", "Enfermagem", "9"));
+            //listaFuncionarios.Add(new Funcionarios("LUCIANA APARECIDA NOGUEIRA DE CAMPOS", "Enfermagem", "10"));
+            //listaFuncionarios.Add(new Funcionarios("MARILEIDE LEANDRA CURVO", "Enfermagem", "11"));
+            //listaFuncionarios.Add(new Funcionarios("MARINA PEREIRA DA SILVA", "Enfermagem", "12"));
+            //listaFuncionarios.Add(new Funcionarios("MAYARA RIBEIRO DA CRUZ", "Enfermagem", "13"));
+            //listaFuncionarios.Add(new Funcionarios("MIRELLE SAMIRA VAZ", "Enfermagem", "14"));
+            //listaFuncionarios.Add(new Funcionarios("ODETE MEDEIROS DE SOUZA", "Enfermagem", "15"));
             //listaFuncionarios.Add(new Funcionarios("FRANCISCA MARIA DE JESUS SANTOS", "Serviços gerais", "16"));
             //listaFuncionarios.Add(new Funcionarios("IVETE FERREIRA DOS SANTOS", "Serviços gerais", "17"));
-            ////listaFuncionarios.Add(new Funcionarios("MARIA GORETTI DE BESSA", "Serviços gerais", "18"));
-            ////listaFuncionarios.Add(new Funcionarios("MARTA GRIGOLETE CORREA", "Serviços gerais", "19"));
-            ////listaFuncionarios.Add(new Funcionarios("RONILDA CIRINO TOMAZ DE ARAUJO", "Serviços gerais", "20"));
-            ////listaFuncionarios.Add(new Funcionarios("TANIA APARECIDA LUCIO", "Serviços gerais", "21"));
-            ////listaFuncionarios.Add(new Funcionarios("VANUSA MARIA DA SILVA", "Serviços gerais", "22"));
-
+            //listaFuncionarios.Add(new Funcionarios("MARIA GORETTI DE BESSA", "Serviços gerais", "18"));
+            //listaFuncionarios.Add(new Funcionarios("MARTA GRIGOLETE CORREA", "Serviços gerais", "19"));
+            //listaFuncionarios.Add(new Funcionarios("RONILDA CIRINO TOMAZ DE ARAUJO", "Serviços gerais", "20"));
+            //listaFuncionarios.Add(new Funcionarios("TANIA APARECIDA LUCIO", "Serviços gerais", "21"));
+            //listaFuncionarios.Add(new Funcionarios("VANUSA MARIA DA SILVA", "Serviços gerais", "22"));
             //listaFuncionarios.Add(new Funcionarios("JULIANA PINARELLI DE CURTIS", "Técnica", "23"));
             //listaFuncionarios.Add(new Funcionarios("MARCELA CRISTINA BARBERA", "Técnica", "24"));
             //listaFuncionarios.Add(new Funcionarios("MARIANA SINICIATO HENRIQUES", "Técnica", "25"));
@@ -87,18 +86,31 @@ namespace Benaiah
             //listaFuncionarios.Add(new Funcionarios("FERNANDA DE OLIVEIRA VIEIRA", "Outros", "29"));
             //listaFuncionarios.Add(new Funcionarios("VANILDE MARTINELI DE OLIVEIRA CAMARGO", "Outros", "30"));
 
+            listaFuncionarios.Add(new Funcionarios("ALDENIRA PEREIRA MORAES", "Cozinha", "0"));
+            listaFuncionarios.Add(new Funcionarios("ANA LUCIA FERREIRA DOS SANTOS", "Cozinha", "1"));
+            listaFuncionarios.Add(new Funcionarios("CAROLINE MARCILENE BARREIRA DE PIERI", "Enfermagem", "5"));
+            listaFuncionarios.Add(new Funcionarios("DAIANY RENATA THOMAZINI", "Enfermagem", "6"));
+            listaFuncionarios.Add(new Funcionarios("FRANCISCA MARIA DE JESUS SANTOS", "Serviços gerais", "16"));
+            listaFuncionarios.Add(new Funcionarios("IVETE FERREIRA DOS SANTOS", "Serviços gerais", "17"));
+            listaFuncionarios.Add(new Funcionarios("JULIANA PINARELLI DE CURTIS", "Técnica", "23"));
+            listaFuncionarios.Add(new Funcionarios("MARCELA CRISTINA BARBERA", "Técnica", "24"));
+            listaFuncionarios.Add(new Funcionarios("MARIANA SINICIATO HENRIQUES", "Técnica", "25"));
+            listaFuncionarios.Add(new Funcionarios("TAMIRES DE ANGELO CANDIDO", "Técnica", "27"));
+            listaFuncionarios.Add(new Funcionarios("FERNANDA DE OLIVEIRA VIEIRA", "Outros", "29"));
+            listaFuncionarios.Add(new Funcionarios("VANILDE MARTINELI DE OLIVEIRA CAMARGO", "Outros", "30"));
+
             //Será removido
-            SqlConnection conexao = new SqlConnection("Server = ULTRABOOK\\SQLEXPRESS; Database = Benaiah; Trusted_Connection = True;");
-            conexao.Open();
-            SqlCommand comando = new SqlCommand("select nome, setor, senha from funcionaria", conexao);
-            using (SqlDataReader reader = comando.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    listaFuncionarios.Add(new Funcionarios(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), reader["senha"].ToString().Trim()));
-                }
-            }
-            conexao.Close();
+            //SqlConnection conexao = new SqlConnection("Server = ULTRABOOK\\SQLEXPRESS; Database = Benaiah; Trusted_Connection = True;");
+            //conexao.Open();
+            //SqlCommand comando = new SqlCommand("select nome, setor, senha from funcionaria", conexao);
+            //using (SqlDataReader reader = comando.ExecuteReader())
+            //{
+            //    while (reader.Read())
+            //    {
+            //        listaFuncionarios.Add(new Funcionarios(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), reader["senha"].ToString().Trim()));
+            //    }
+            //}
+            //conexao.Close();
         }
 
         private void BtnConfirmar_Click(object sender, EventArgs e)
@@ -126,31 +138,36 @@ namespace Benaiah
             //else if (txtSenha.Text.Equals("20")) { SetupAoAcertarSenha(listaFuncionarios[20].Funcionario); nome = listaFuncionarios[20].Funcionario; }
             //else if (txtSenha.Text.Equals("21")) { SetupAoAcertarSenha(listaFuncionarios[21].Funcionario); nome = listaFuncionarios[21].Funcionario; }
             //else if (txtSenha.Text.Equals("22")) { SetupAoAcertarSenha(listaFuncionarios[22].Funcionario); nome = listaFuncionarios[22].Funcionario; }
-            
-            
+
+
             try
             {
-                SqlConnection conexao = new SqlConnection("Server=ULTRABOOK\\SQLEXPRESS;Database=Benaiah;Trusted_Connection=True;");
-                conexao.Open();
-                SqlCommand comando = new SqlCommand("select nome, setor from funcionaria where senha = @senha", conexao);
-                comando.Parameters.AddWithValue("@senha", txtSenha.Text);
-                using (SqlDataReader reader = comando.ExecuteReader())
-                {
-                    if (reader.Read().ToString() != "")
-                    {
-                        nomeAvaliadora = reader["nome"].ToString().Trim();
-                        setorAvaliadora = reader["setor"].ToString().Trim();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Senha incorreta. Por favor, tente novamente.");
-                        txtSenha.Text = "";
-                        txtSenha.Focus();
-                    }
-                }
-                conexao.Close();
+                //SqlConnection conexao = new SqlConnection("Server=ULTRABOOK\\SQLEXPRESS;Database=Benaiah;Trusted_Connection=True;");
+                //conexao.Open();
+                //SqlCommand comando = new SqlCommand("select nome, setor from funcionaria where senha = @senha", conexao);
+                //comando.Parameters.AddWithValue("@senha", txtSenha.Text);
+                //using (SqlDataReader reader = comando.ExecuteReader())
+                //{
+                //    if (reader.Read().ToString() != "")
+                //    {
+                //        nomeAvaliadora = reader["nome"].ToString().Trim();
+                //        setorAvaliadora = reader["setor"].ToString().Trim();
+                //    }
+                //    else
+                //    {
+                //        MessageBox.Show("Senha incorreta. Por favor, tente novamente.");
+                //        txtSenha.Text = "";
+                //        txtSenha.Focus();
+                //    }
+                //}
+                //conexao.Close();
 
-                //nomeEntrevistada = listaFuncionarios.Where(x => x.Senha.Equals(txtSenha.Text)).Select(x => x.Funcionario).ToList()[0].ToString();
+                //Somente para lista sem conexão com banco de dados
+                var nomeEntrevistada = listaFuncionarios.Where(x => x.Senha.Equals(txtSenha.Text)).Select(x => x.Funcionario).ToList()[0].ToString();
+                nomeAvaliadora = nomeEntrevistada.ToString();
+                var setorEntrevistada = listaFuncionarios.Where(x => x.Senha.Equals(txtSenha.Text)).Select(x => x.Setor).ToList()[0].ToString();
+                setorAvaliadora = setorEntrevistada.ToString();
+                //Fim da lista sem conexão com banco de dados
                 SetupAoAcertarSenha();
             }
             catch
@@ -180,36 +197,36 @@ namespace Benaiah
             {
                 while (reader.Read())
                 {
-                    if (reader["nome"].ToString().Trim() != nomeAvaliadora) 
+                    if (reader["nome"].ToString().Trim() != nomeAvaliadora)
                     {
                         //Cozinha
                         if (setorAvaliadora.Equals("Cozinha") && reader["setor"].ToString().Trim().Equals("Cozinha"))
-                        {                               
-                            SetorIgual sIgual = new SetorIgual(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                        {
+                            SetorIgual sIgual = new SetorIgual(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             sIgual.ShowDialog();
                             todasRespostas.AddRange(SetorIgual.listaRespostas);
                         }
                         if (setorAvaliadora.Equals("Cozinha") && reader["setor"].ToString().Trim().Equals("Enfermagem"))
                         {
-                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             sDiferente.ShowDialog();
                             todasRespostas.AddRange(SetorDiferente.listaRespostas);
                         }
                         if (setorAvaliadora.Equals("Cozinha") && reader["setor"].ToString().Trim().Equals("Serviços gerais"))
                         {
-                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             sDiferente.ShowDialog();
                             todasRespostas.AddRange(SetorDiferente.listaRespostas);
                         }
                         if (setorAvaliadora.Equals("Cozinha") && reader["setor"].ToString().Trim().Equals("Técnica"))
                         {
-                            Tecnica tecnica = new Tecnica(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            Tecnica tecnica = new Tecnica(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             tecnica.ShowDialog();
                             todasRespostas.AddRange(Tecnica.listaRespostas);
                         }
                         if (setorAvaliadora.Equals("Cozinha") && reader["setor"].ToString().Trim().Equals("Outros"))
                         {
-                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             sDiferente.ShowDialog();
                             todasRespostas.AddRange(SetorDiferente.listaRespostas);
                         }
@@ -217,31 +234,31 @@ namespace Benaiah
                         //Enfermagem
                         if (setorAvaliadora.Equals("Enfermagem") && reader["setor"].ToString().Trim().Equals("Cozinha"))
                         {
-                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             sDiferente.ShowDialog();
                             todasRespostas.AddRange(SetorDiferente.listaRespostas);
                         }
                         if (setorAvaliadora.Equals("Enfermagem") && reader["setor"].ToString().Trim().Equals("Enfermagem"))
                         {
-                            SetorIgual sIgual = new SetorIgual(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            SetorIgual sIgual = new SetorIgual(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             sIgual.ShowDialog();
                             todasRespostas.AddRange(SetorIgual.listaRespostas);
                         }
                         if (setorAvaliadora.Equals("Enfermagem") && reader["setor"].ToString().Trim().Equals("Serviços gerais"))
                         {
-                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             sDiferente.ShowDialog();
                             todasRespostas.AddRange(SetorDiferente.listaRespostas);
                         }
                         if (setorAvaliadora.Equals("Enfermagem") && reader["setor"].ToString().Trim().Equals("Técnica"))
                         {
-                            Tecnica tecnica = new Tecnica(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            Tecnica tecnica = new Tecnica(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             tecnica.ShowDialog();
                             todasRespostas.AddRange(Tecnica.listaRespostas);
                         }
                         if (setorAvaliadora.Equals("Enfermagem") && reader["setor"].ToString().Trim().Equals("Outros"))
                         {
-                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             sDiferente.ShowDialog();
                             todasRespostas.AddRange(SetorDiferente.listaRespostas);
                         }
@@ -249,31 +266,31 @@ namespace Benaiah
                         //Serviços gerais
                         if (setorAvaliadora.Equals("Serviços gerais") && reader["setor"].ToString().Trim().Equals("Cozinha"))
                         {
-                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             sDiferente.ShowDialog();
                             todasRespostas.AddRange(SetorDiferente.listaRespostas);
                         }
                         if (setorAvaliadora.Equals("Serviços gerais") && reader["setor"].ToString().Trim().Equals("Enfermagem"))
                         {
-                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             sDiferente.ShowDialog();
                             todasRespostas.AddRange(SetorDiferente.listaRespostas);
                         }
                         if (setorAvaliadora.Equals("Serviços gerais") && reader["setor"].ToString().Trim().Equals("Serviços gerais"))
                         {
-                            SetorIgual sIgual = new SetorIgual(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            SetorIgual sIgual = new SetorIgual(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             sIgual.ShowDialog();
                             todasRespostas.AddRange(SetorIgual.listaRespostas);
                         }
                         if (setorAvaliadora.Equals("Serviços gerais") && reader["setor"].ToString().Trim().Equals("Técnica"))
                         {
-                            Tecnica tecnica = new Tecnica(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            Tecnica tecnica = new Tecnica(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             tecnica.ShowDialog();
                             todasRespostas.AddRange(Tecnica.listaRespostas);
                         }
                         if (setorAvaliadora.Equals("Serviços gerais") && reader["setor"].ToString().Trim().Equals("Outros"))
                         {
-                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             sDiferente.ShowDialog();
                             todasRespostas.AddRange(SetorDiferente.listaRespostas);
                         }
@@ -281,31 +298,31 @@ namespace Benaiah
                         //Técnica
                         if (setorAvaliadora.Equals("Técnica") && reader["setor"].ToString().Trim().Equals("Cozinha"))
                         {
-                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             sDiferente.ShowDialog();
                             todasRespostas.AddRange(SetorDiferente.listaRespostas);
                         }
                         if (setorAvaliadora.Equals("Técnica") && reader["setor"].ToString().Trim().Equals("Enfermagem"))
                         {
-                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             sDiferente.ShowDialog();
                             todasRespostas.AddRange(SetorDiferente.listaRespostas);
                         }
                         if (setorAvaliadora.Equals("Técnica") && reader["setor"].ToString().Trim().Equals("Serviços gerais"))
                         {
-                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             sDiferente.ShowDialog();
                             todasRespostas.AddRange(SetorDiferente.listaRespostas);
                         }
                         if (setorAvaliadora.Equals("Técnica") && reader["setor"].ToString().Trim().Equals("Técnica"))
                         {
-                            TecnicaMesmoSetor tMesmoSetor = new TecnicaMesmoSetor(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            TecnicaMesmoSetor tMesmoSetor = new TecnicaMesmoSetor(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             tMesmoSetor.ShowDialog();
                             todasRespostas.AddRange(TecnicaMesmoSetor.listaRespostas);
                         }
                         if (setorAvaliadora.Equals("Técnica") && reader["setor"].ToString().Trim().Equals("Outros"))
                         {
-                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             sDiferente.ShowDialog();
                             todasRespostas.AddRange(SetorDiferente.listaRespostas);
                         }
@@ -313,37 +330,204 @@ namespace Benaiah
                         //Outros
                         if (setorAvaliadora.Equals("Outros") && reader["setor"].ToString().Trim().Equals("Cozinha"))
                         {
-                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             sDiferente.ShowDialog();
                             todasRespostas.AddRange(SetorDiferente.listaRespostas);
                         }
                         if (setorAvaliadora.Equals("Outros") && reader["setor"].ToString().Trim().Equals("Enfermagem"))
                         {
-                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             sDiferente.ShowDialog();
                             todasRespostas.AddRange(SetorDiferente.listaRespostas);
                         }
                         if (setorAvaliadora.Equals("Outros") && reader["setor"].ToString().Trim().Equals("Serviços gerais"))
                         {
-                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             sDiferente.ShowDialog();
                             todasRespostas.AddRange(SetorDiferente.listaRespostas);
                         }
                         if (setorAvaliadora.Equals("Outros") && reader["setor"].ToString().Trim().Equals("Técnica"))
                         {
-                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            SetorDiferente sDiferente = new SetorDiferente(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             sDiferente.ShowDialog();
                             todasRespostas.AddRange(SetorDiferente.listaRespostas);
                         }
                         if (setorAvaliadora.Equals("Outros") && reader["setor"].ToString().Trim().Equals("Outros"))
                         {
-                            SetorIgual sIgual = new SetorIgual(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), setorAvaliadora);
+                            SetorIgual sIgual = new SetorIgual(reader["nome"].ToString().Trim(), reader["setor"].ToString().Trim(), nomeAvaliadora, setorAvaliadora);
                             sIgual.ShowDialog();
                             todasRespostas.AddRange(SetorIgual.listaRespostas);
                         }
                     }
                 }
             }
+
+
+            //foreach (var item in listaFuncionarios)
+            //{
+            //    if (item.Funcionario != nomeAvaliadora)
+            //    {
+            //        //Cozinha
+            //        if (setorAvaliadora.Equals("Cozinha") && item.Setor.Equals("Cozinha"))
+            //        {
+            //            SetorIgual sIgual = new SetorIgual(item.Funcionario, item.Setor, setorAvaliadora);
+            //            sIgual.ShowDialog();
+            //            todasRespostas.AddRange(SetorIgual.listaRespostas);
+            //        }
+            //        if (setorAvaliadora.Equals("Cozinha") && item.Setor.Equals("Enfermagem"))
+            //        {
+            //            SetorDiferente sDiferente = new SetorDiferente(item.Funcionario, item.Setor, setorAvaliadora);
+            //            sDiferente.ShowDialog();
+            //            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+            //        }
+            //        if (setorAvaliadora.Equals("Cozinha") && item.Setor.Equals("Serviços gerais"))
+            //        {
+            //            SetorDiferente sDiferente = new SetorDiferente(item.Funcionario, item.Setor, setorAvaliadora);
+            //            sDiferente.ShowDialog();
+            //            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+            //        }
+            //        if (setorAvaliadora.Equals("Cozinha") && item.Setor.Equals("Técnica"))
+            //        {
+            //            Tecnica tecnica = new Tecnica(item.Funcionario, item.Setor, setorAvaliadora);
+            //            tecnica.ShowDialog();
+            //            todasRespostas.AddRange(Tecnica.listaRespostas);
+            //        }
+            //        if (setorAvaliadora.Equals("Cozinha") && item.Setor.Equals("Outros"))
+            //        {
+            //            SetorDiferente sDiferente = new SetorDiferente(item.Funcionario, item.Setor, setorAvaliadora);
+            //            sDiferente.ShowDialog();
+            //            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+            //        }
+
+            //        //Enfermagem
+            //        if (setorAvaliadora.Equals("Enfermagem") && item.Setor.Equals("Cozinha"))
+            //        {
+            //            SetorDiferente sDiferente = new SetorDiferente(item.Funcionario, item.Setor, setorAvaliadora);
+            //            sDiferente.ShowDialog();
+            //            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+            //        }
+            //        if (setorAvaliadora.Equals("Enfermagem") && item.Setor.Equals("Enfermagem"))
+            //        {
+            //            SetorIgual sIgual = new SetorIgual(item.Funcionario, item.Setor, setorAvaliadora);
+            //            sIgual.ShowDialog();
+            //            todasRespostas.AddRange(SetorIgual.listaRespostas);
+            //        }
+            //        if (setorAvaliadora.Equals("Enfermagem") && item.Setor.Equals("Serviços gerais"))
+            //        {
+            //            SetorDiferente sDiferente = new SetorDiferente(item.Funcionario, item.Setor, setorAvaliadora);
+            //            sDiferente.ShowDialog();
+            //            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+            //        }
+            //        if (setorAvaliadora.Equals("Enfermagem") && item.Setor.Equals("Técnica"))
+            //        {
+            //            Tecnica tecnica = new Tecnica(item.Funcionario, item.Setor, setorAvaliadora);
+            //            tecnica.ShowDialog();
+            //            todasRespostas.AddRange(Tecnica.listaRespostas);
+            //        }
+            //        if (setorAvaliadora.Equals("Enfermagem") && item.Setor.Equals("Outros"))
+            //        {
+            //            SetorDiferente sDiferente = new SetorDiferente(item.Funcionario, item.Setor, setorAvaliadora);
+            //            sDiferente.ShowDialog();
+            //            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+            //        }
+
+            //        //Serviços gerais
+            //        if (setorAvaliadora.Equals("Serviços gerais") && item.Setor.Equals("Cozinha"))
+            //        {
+            //            SetorDiferente sDiferente = new SetorDiferente(item.Funcionario, item.Setor, setorAvaliadora);
+            //            sDiferente.ShowDialog();
+            //            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+            //        }
+            //        if (setorAvaliadora.Equals("Serviços gerais") && item.Setor.Equals("Enfermagem"))
+            //        {
+            //            SetorDiferente sDiferente = new SetorDiferente(item.Funcionario, item.Setor, setorAvaliadora);
+            //            sDiferente.ShowDialog();
+            //            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+            //        }
+            //        if (setorAvaliadora.Equals("Serviços gerais") && item.Setor.Equals("Serviços gerais"))
+            //        {
+            //            SetorIgual sIgual = new SetorIgual(item.Funcionario, item.Setor, setorAvaliadora);
+            //            sIgual.ShowDialog();
+            //            todasRespostas.AddRange(SetorIgual.listaRespostas);
+            //        }
+            //        if (setorAvaliadora.Equals("Serviços gerais") && item.Setor.Equals("Técnica"))
+            //        {
+            //            Tecnica tecnica = new Tecnica(item.Funcionario, item.Setor, setorAvaliadora);
+            //            tecnica.ShowDialog();
+            //            todasRespostas.AddRange(Tecnica.listaRespostas);
+            //        }
+            //        if (setorAvaliadora.Equals("Serviços gerais") && item.Setor.Equals("Outros"))
+            //        {
+            //            SetorDiferente sDiferente = new SetorDiferente(item.Funcionario, item.Setor, setorAvaliadora);
+            //            sDiferente.ShowDialog();
+            //            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+            //        }
+
+            //        //Técnica
+            //        if (setorAvaliadora.Equals("Técnica") && item.Setor.Equals("Cozinha"))
+            //        {
+            //            SetorDiferente sDiferente = new SetorDiferente(item.Funcionario, item.Setor, setorAvaliadora);
+            //            sDiferente.ShowDialog();
+            //            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+            //        }
+            //        if (setorAvaliadora.Equals("Técnica") && item.Setor.Equals("Enfermagem"))
+            //        {
+            //            SetorDiferente sDiferente = new SetorDiferente(item.Funcionario, item.Setor, setorAvaliadora);
+            //            sDiferente.ShowDialog();
+            //            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+            //        }
+            //        if (setorAvaliadora.Equals("Técnica") && item.Setor.Equals("Serviços gerais"))
+            //        {
+            //            SetorDiferente sDiferente = new SetorDiferente(item.Funcionario, item.Setor, setorAvaliadora);
+            //            sDiferente.ShowDialog();
+            //            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+            //        }
+            //        if (setorAvaliadora.Equals("Técnica") && item.Setor.Equals("Técnica"))
+            //        {
+            //            TecnicaMesmoSetor tMesmoSetor = new TecnicaMesmoSetor(item.Funcionario, item.Setor, setorAvaliadora);
+            //            tMesmoSetor.ShowDialog();
+            //            todasRespostas.AddRange(TecnicaMesmoSetor.listaRespostas);
+            //        }
+            //        if (setorAvaliadora.Equals("Técnica") && item.Setor.Equals("Outros"))
+            //        {
+            //            SetorDiferente sDiferente = new SetorDiferente(item.Funcionario, item.Setor, setorAvaliadora);
+            //            sDiferente.ShowDialog();
+            //            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+            //        }
+
+            //        //Outros
+            //        if (setorAvaliadora.Equals("Outros") && item.Setor.Equals("Cozinha"))
+            //        {
+            //            SetorDiferente sDiferente = new SetorDiferente(item.Funcionario, item.Setor, setorAvaliadora);
+            //            sDiferente.ShowDialog();
+            //            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+            //        }
+            //        if (setorAvaliadora.Equals("Outros") && item.Setor.Equals("Enfermagem"))
+            //        {
+            //            SetorDiferente sDiferente = new SetorDiferente(item.Funcionario, item.Setor, setorAvaliadora);
+            //            sDiferente.ShowDialog();
+            //            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+            //        }
+            //        if (setorAvaliadora.Equals("Outros") && item.Setor.Equals("Serviços gerais"))
+            //        {
+            //            SetorDiferente sDiferente = new SetorDiferente(item.Funcionario, item.Setor, setorAvaliadora);
+            //            sDiferente.ShowDialog();
+            //            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+            //        }
+            //        if (setorAvaliadora.Equals("Outros") && item.Setor.Equals("Técnica"))
+            //        {
+            //            SetorDiferente sDiferente = new SetorDiferente(item.Funcionario, item.Setor, setorAvaliadora);
+            //            sDiferente.ShowDialog();
+            //            todasRespostas.AddRange(SetorDiferente.listaRespostas);
+            //        }
+            //        if (setorAvaliadora.Equals("Outros") && item.Setor.Equals("Outros"))
+            //        {
+            //            SetorIgual sIgual = new SetorIgual(item.Funcionario, item.Setor, setorAvaliadora);
+            //            sIgual.ShowDialog();
+            //            todasRespostas.AddRange(SetorIgual.listaRespostas);
+            //        }
+            //    }
+            //}
 
             ConcentraRespostas c = new ConcentraRespostas();
             c.GeraRelatorio(todasRespostas, nomeAvaliadora, setorAvaliadora);
