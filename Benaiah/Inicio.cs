@@ -86,18 +86,18 @@ namespace Benaiah
             //listaFuncionarios.Add(new Funcionarios("FERNANDA DE OLIVEIRA VIEIRA", "Outros", "29"));
             //listaFuncionarios.Add(new Funcionarios("VANILDE MARTINELI DE OLIVEIRA CAMARGO", "Outros", "30"));
 
-            listaFuncionarios.Add(new Funcionarios("ALDENIRA PEREIRA MORAES", "Cozinha", "0"));
-            listaFuncionarios.Add(new Funcionarios("ANA LUCIA FERREIRA DOS SANTOS", "Cozinha", "1"));
-            listaFuncionarios.Add(new Funcionarios("CAROLINE MARCILENE BARREIRA DE PIERI", "Enfermagem", "5"));
-            listaFuncionarios.Add(new Funcionarios("DAIANY RENATA THOMAZINI", "Enfermagem", "6"));
-            listaFuncionarios.Add(new Funcionarios("FRANCISCA MARIA DE JESUS SANTOS", "Serviços gerais", "16"));
-            listaFuncionarios.Add(new Funcionarios("IVETE FERREIRA DOS SANTOS", "Serviços gerais", "17"));
-            listaFuncionarios.Add(new Funcionarios("JULIANA PINARELLI DE CURTIS", "Técnica", "23"));
-            listaFuncionarios.Add(new Funcionarios("MARCELA CRISTINA BARBERA", "Técnica", "24"));
-            listaFuncionarios.Add(new Funcionarios("MARIANA SINICIATO HENRIQUES", "Técnica", "25"));
-            listaFuncionarios.Add(new Funcionarios("TAMIRES DE ANGELO CANDIDO", "Técnica", "27"));
-            listaFuncionarios.Add(new Funcionarios("FERNANDA DE OLIVEIRA VIEIRA", "Outros", "29"));
-            listaFuncionarios.Add(new Funcionarios("VANILDE MARTINELI DE OLIVEIRA CAMARGO", "Outros", "30"));
+            //listaFuncionarios.Add(new Funcionarios("ALDENIRA PEREIRA MORAES", "Cozinha", "0"));
+            //listaFuncionarios.Add(new Funcionarios("ANA LUCIA FERREIRA DOS SANTOS", "Cozinha", "1"));
+            //listaFuncionarios.Add(new Funcionarios("CAROLINE MARCILENE BARREIRA DE PIERI", "Enfermagem", "5"));
+            //listaFuncionarios.Add(new Funcionarios("DAIANY RENATA THOMAZINI", "Enfermagem", "6"));
+            //listaFuncionarios.Add(new Funcionarios("FRANCISCA MARIA DE JESUS SANTOS", "Serviços gerais", "16"));
+            //listaFuncionarios.Add(new Funcionarios("RENATA DOMINGUES", "Serviços gerais", "17"));
+            //listaFuncionarios.Add(new Funcionarios("JULIANA PINARELLI DE CURTIS", "Técnica", "23"));
+            //listaFuncionarios.Add(new Funcionarios("MARCELA CRISTINA BARBERA", "Técnica", "24"));
+            //listaFuncionarios.Add(new Funcionarios("MARIANA SINICIATO HENRIQUES", "Técnica", "25"));
+            //listaFuncionarios.Add(new Funcionarios("TAMIRES DE ANGELO CANDIDO", "Técnica", "27"));
+            //listaFuncionarios.Add(new Funcionarios("FERNANDA DE OLIVEIRA VIEIRA", "Outros", "29"));
+            //listaFuncionarios.Add(new Funcionarios("VANILDE MARTINELI DE OLIVEIRA CAMARGO", "Outros", "30"));
 
             //Será removido
             //SqlConnection conexao = new SqlConnection("Server = ULTRABOOK\\SQLEXPRESS; Database = Benaiah; Trusted_Connection = True;");
@@ -142,31 +142,32 @@ namespace Benaiah
 
             try
             {
-                //SqlConnection conexao = new SqlConnection("Server=ULTRABOOK\\SQLEXPRESS;Database=Benaiah;Trusted_Connection=True;");
-                //conexao.Open();
-                //SqlCommand comando = new SqlCommand("select nome, setor from funcionaria where senha = @senha", conexao);
-                //comando.Parameters.AddWithValue("@senha", txtSenha.Text);
-                //using (SqlDataReader reader = comando.ExecuteReader())
-                //{
-                //    if (reader.Read().ToString() != "")
-                //    {
-                //        nomeAvaliadora = reader["nome"].ToString().Trim();
-                //        setorAvaliadora = reader["setor"].ToString().Trim();
-                //    }
-                //    else
-                //    {
-                //        MessageBox.Show("Senha incorreta. Por favor, tente novamente.");
-                //        txtSenha.Text = "";
-                //        txtSenha.Focus();
-                //    }
-                //}
-                //conexao.Close();
+                BancoDeDados bd = new BancoDeDados();
+                SqlConnection conexao = new SqlConnection(bd.StringConexao());
+                conexao.Open();
+                SqlCommand comando = new SqlCommand("select nome, setor, senha from Funcionaria, Atuacao where Funcionaria.IDsetor = Atuacao.IDsetor and senha = @senha", conexao);
+                comando.Parameters.AddWithValue("@senha", txtSenha.Text);
+                using (SqlDataReader reader = comando.ExecuteReader())
+                {
+                    if (reader.Read().ToString() != "")
+                    {
+                        nomeAvaliadora = reader["nome"].ToString().Trim();
+                        setorAvaliadora = reader["setor"].ToString().Trim();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Senha incorreta. Por favor, tente novamente.");
+                        txtSenha.Text = "";
+                        txtSenha.Focus();
+                    }
+                }
+                conexao.Close();
 
                 //Somente para lista sem conexão com banco de dados
-                var nomeEntrevistada = listaFuncionarios.Where(x => x.Senha.Equals(txtSenha.Text)).Select(x => x.Funcionario).ToList()[0].ToString();
-                nomeAvaliadora = nomeEntrevistada.ToString();
-                var setorEntrevistada = listaFuncionarios.Where(x => x.Senha.Equals(txtSenha.Text)).Select(x => x.Setor).ToList()[0].ToString();
-                setorAvaliadora = setorEntrevistada.ToString();
+                //var nomeEntrevistada = listaFuncionarios.Where(x => x.Senha.Equals(txtSenha.Text)).Select(x => x.Funcionario).ToList()[0].ToString();
+                //nomeAvaliadora = nomeEntrevistada.ToString();
+                //var setorEntrevistada = listaFuncionarios.Where(x => x.Senha.Equals(txtSenha.Text)).Select(x => x.Setor).ToList()[0].ToString();
+                //setorAvaliadora = setorEntrevistada.ToString();
                 //Fim da lista sem conexão com banco de dados
                 SetupAoAcertarSenha();
             }
@@ -190,9 +191,11 @@ namespace Benaiah
         {
             Hide();
 
-            SqlConnection conexao = new SqlConnection("Server=ULTRABOOK\\SQLEXPRESS;Database=Benaiah;Trusted_Connection=True;");
+            BancoDeDados bd = new BancoDeDados();
+            SqlConnection conexao = new SqlConnection(bd.StringConexao());
             conexao.Open();
-            SqlCommand comando = new SqlCommand("select nome, setor from funcionaria", conexao);
+            //SqlCommand comando = new SqlCommand("select nome, setor from funcionaria", conexao);
+            SqlCommand comando = new SqlCommand("select nome, setor from Funcionaria, Atuacao where Funcionaria.IDsetor = Atuacao.IDsetor", conexao);
             using (SqlDataReader reader = comando.ExecuteReader())
             {
                 while (reader.Read())

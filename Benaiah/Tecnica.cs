@@ -52,12 +52,14 @@ namespace Benaiah
 
             foreach (var item in perguntas.Tipo4())
             {
-                formulario.CriaGroupBoxes(numeroPergunta, numeroPergunta + 1 + ". " + item, 1);
+                //formulario.CriaGroupBoxes(numeroPergunta, numeroPergunta + 1 + ". " + item, 1);
+                formulario.CriaGroupBoxes(numeroPergunta, item, 1);
                 numeroPergunta++;
             }
-            foreach (var item in perguntas.Tipo2())
+            foreach (var item in perguntas.Tipo3())
             {
-                formulario.CriaGroupBoxes(numeroPergunta, numeroPergunta + 1 + ". " + item, 2);
+                //formulario.CriaGroupBoxes(numeroPergunta, numeroPergunta + 1 + ". " + item, 2);
+                formulario.CriaGroupBoxes(numeroPergunta, item, 2);
                 numeroPergunta++;
             }
 
@@ -65,7 +67,8 @@ namespace Benaiah
                 nomeAvaliada.Equals("MARIANA SINICIATO HENRIQUES") && setorDaAvaliadora.Equals("Enfermagem") ||
                 nomeAvaliada.Equals("JULIANA PINARELLI DE CURTIS") && setorDaAvaliadora.Equals("Serviços gerais"))
             {                
-                formulario.CriaGroupBoxes(numeroPergunta, numeroPergunta+1 + ". Liderança (encoraja o trabalho em equipe, direciona e conduz projetos)", 2);                
+                //formulario.CriaGroupBoxes(numeroPergunta, numeroPergunta+1 + ". Liderança (encoraja o trabalho em equipe, direciona e conduz projetos)", 2);
+                formulario.CriaGroupBoxes(numeroPergunta, "Liderança (encoraja o trabalho em equipe, direciona e conduz projetos)", 2);
             }
 
 
@@ -76,7 +79,10 @@ namespace Benaiah
             {
                 foreach (var rb in box.Controls.OfType<RadioButton>())
                 {
-                    if (rb.Text.Equals("A maior parte do tempo") || rb.Text.Equals("Excede expectativas"))
+                    //if (rb.Text.Equals("A maior parte do tempo") || rb.Text.Equals("Excede expectativas"))
+                    //if (rb.Text.Equals("A menor parte do tempo") || rb.Text.Equals("Atinge Expectativas"))
+                    if (rb.Text.Equals("Sempre") || rb.Text.Equals("Precisa melhorar"))
+                    //if (rb.Text.Equals("Nunca") || rb.Text.Equals("Insatisfatório"))
                     {
                         rb.Checked = true;
                     }

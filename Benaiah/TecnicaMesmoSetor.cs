@@ -53,18 +53,18 @@ namespace Benaiah
 
             foreach (var item in perguntas.Tipo1())
             {
-                formulario.CriaGroupBoxes(numeroPergunta, numeroPergunta + ". " + item, 1);
+                formulario.CriaGroupBoxes(numeroPergunta, item, 1);
                 numeroPergunta++;
             }
             foreach (var item in perguntas.Tipo3())
             {
-                formulario.CriaGroupBoxes(numeroPergunta, numeroPergunta + ". " + item, 2);
+                formulario.CriaGroupBoxes(numeroPergunta, item, 2);
                 numeroPergunta++;
             }
 
             if (nomeAvaliada.Equals("JULIANA PINARELLI DE CURTIS"))
             {
-                formulario.CriaGroupBoxes(20, "21. Liderança (encoraja o trabalho em equipe, direciona e conduz projetos).", 2);
+                formulario.CriaGroupBoxes(20, "Liderança (encoraja o trabalho em equipe, direciona e conduz projetos).", 2);
             }
 
             int indiceUltimoGroupbox = formulario.ContagemGrupbox(); // Para posicionar abaixo do último groupbox o botão CONFIRMAR precisa contar a quantidade de grupbox
@@ -77,7 +77,13 @@ namespace Benaiah
             {
                 foreach (var rb in box.Controls.OfType<RadioButton>())
                 {
-                    rb.Checked = true;
+                    //if (rb.Text.Equals("A maior parte do tempo") || rb.Text.Equals("Excede expectativas"))
+                    //if (rb.Text.Equals("A menor parte do tempo") || rb.Text.Equals("Atinge Expectativas"))
+                    if (rb.Text.Equals("Sempre") || rb.Text.Equals("Precisa melhorar"))
+                    //if (rb.Text.Equals("Nunca") || rb.Text.Equals("Insatisfatório"))
+                    {
+                        rb.Checked = true;
+                    }
                 }
             }
         }

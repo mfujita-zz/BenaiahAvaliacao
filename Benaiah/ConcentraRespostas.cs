@@ -65,8 +65,11 @@ namespace Benaiah
             sw.WriteLine("<body>");
             sw.WriteLine("<meta charset=utf8>");
             sw.WriteLine("<table border=1>");
-            using (SqlConnection conexao = new SqlConnection("Server = ULTRABOOK\\SQLEXPRESS; Database = Benaiah; Trusted_Connection = True;"))
+
+            BancoDeDados bd = new BancoDeDados();
+            using (SqlConnection conexao = new SqlConnection(bd.StringConexao()))
             {
+                conexao.Open();
                 foreach (var item in question)
                 {
                     using (SqlCommand comando = new SqlCommand("select * from Resposta where pergunta = " + item + "and nome = 'ALDENIRA PEREIRA MORAES'", conexao))

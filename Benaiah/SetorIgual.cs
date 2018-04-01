@@ -16,6 +16,11 @@ namespace Benaiah
         private string setorDaAvaliadora;
         private string nomeAvaliada;
         private string setorAvaliada;
+
+        //private int IDfuncAvaliadora;
+        //private int IDsetorAvaliadora;
+        //private int IDfuncAvaliada;
+        //private int IDsetorAvaliada;
         public static List<ListaDeRespostas> listaRespostas { get; set; }
 
         public SetorIgual(string _nomeAvaliada, string _setorAvaliada, string nomeRespondendoFormulario, string _setorAvaliadora)
@@ -29,6 +34,7 @@ namespace Benaiah
             setorDaAvaliadora = _setorAvaliadora;
             listaRespostas = new List<ListaDeRespostas>();
         }
+
 
         /// <summary>
         /// CriaFormulario(int, string, int)
@@ -52,7 +58,8 @@ namespace Benaiah
 
             foreach (var item in perguntas.Tipo1())
             {
-                formulario.CriaGroupBoxes(numeroPergunta, numeroPergunta+1 + ". " + item, 1);
+                //formulario.CriaGroupBoxes(numeroPergunta, numeroPergunta+1 + ". " + item, 1);
+                formulario.CriaGroupBoxes(numeroPergunta, item, 1);
                 numeroPergunta++;
             }
 
@@ -63,7 +70,10 @@ namespace Benaiah
             {
                 foreach (var rb in box.Controls.OfType<RadioButton>())
                 {
-                    if (rb.Text.Equals("A maior parte do tempo") || rb.Text.Equals("Excede expectativas"))
+                    //if (rb.Text.Equals("A maior parte do tempo") || rb.Text.Equals("Excede expectativas"))
+                    //if (rb.Text.Equals("A menor parte do tempo") || rb.Text.Equals("Atinge Expectativas"))
+                    if (rb.Text.Equals("Sempre") || rb.Text.Equals("Precisa melhorar"))
+                    //if (rb.Text.Equals("Nunca") || rb.Text.Equals("Insatisfatório"))
                     {
                         rb.Checked = true;
                     }
@@ -81,6 +91,8 @@ namespace Benaiah
                     foreach (var rb in box.Controls.OfType<RadioButton>().Where(x => x.Checked))
                     {
                         //ListaDeRespostas lista = new ListaDeRespostas(nomeAvaliada, setorAvaliada, box.Text, rb.Text);
+                        //ListaDeRespostas lista = new ListaDeRespostas(nomeDaAvaliadora, setorDaAvaliadora, nomeAvaliada, setorAvaliada, box.Text, rb.Text);
+
                         ListaDeRespostas lista = new ListaDeRespostas(nomeDaAvaliadora, setorDaAvaliadora, nomeAvaliada, setorAvaliada, box.Text, rb.Text);
                         listaRespostas.Add(lista);
                     }

@@ -69,6 +69,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BancoDadosBenaiah.edmx</DependentUpon>
     </Compile>
+    <Compile Include="BancoDeDados.cs" />
     <Compile Include="ConcentraRespostas.cs" />
     <Compile Include="DesenhaFormulario.cs" />
     <Compile Include="funcionaria.cs">
